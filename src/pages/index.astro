@@ -1,9 +1,85 @@
 ---
-import { getIndex } from "@lib/contentParser";
-import EntryLayout from "@components/home/EntryLayout.astro";
-import type { HomeEntry } from "@/types";
+import BaseLayout from "@/components/base/BaseLayout.astro";
+import TeamMemberCard from "@/components/TeamMemberCard.astro";
+import buzon from '../assets/images/hero_headers/buzon.png'
+import red from '../assets/images/hero_headers/red_ciudadana.png'
+import { Image } from 'astro:assets';
 
-const entry = (await getIndex("home")) as HomeEntry;
+
+const teamMembers = [
+  {
+    name: "Dra. Elizabeth Olivares Guevara",
+    position: "Presidente",
+    imageUrl: "/src/assets/images/team/elizabeth-olivares.jpg",
+    curriculumUrl: "/curriculum/elizabeth-olivares",
+  },
+  {
+    name: "Lic. Carlos Jonathan Pérez Ramírez",
+    position: "Integrante",
+    imageUrl: "/src/assets/images/team/carlos-perez.jpg",
+    curriculumUrl: "/curriculum/carlos-perez",
+  },
+  {
+    name: "Lic. Juan Carlos Cruz Jiménez",
+    position: "Integrante",
+    imageUrl: "/src/assets/images/team/juan-cruz.jpg",
+    curriculumUrl: "/curriculum/juan-cruz",
+  },
+  {
+    name: "Victor Cosefl Flores",
+    position: "Integrante",
+    imageUrl: "/src/assets/images/team/victor-flores.png",
+    curriculumUrl: "/curriculum/victor-flores",
+  },{
+    name: "Integrante",
+    position: "Integrante",
+    imageUrl: "/src/assets/images/team/",
+    curriculumUrl: "/curriculum/integrante",
+  },
+];
 ---
 
-<EntryLayout entry={entry} />
+<BaseLayout>
+  <section class="container mx-auto px-4 py-16">
+    <div class="mb-12 text-center">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 w-full">
+      <a href="/red-ciudadana" class="flex-1 flex justify-center">
+        <Image 
+          src={red} 
+          alt="Red Ciudadana" 
+          class="w-40 md:w-60 h-auto rounded-lg shadow-md object-cover transition-transform hover:scale-105"
+        />
+      </a>
+      <a href="/buzon" class="flex-1 flex justify-center">
+        <Image 
+          src={buzon} 
+          alt="Buzón" 
+          class="w-40 md:w-60 h-auto rounded-lg shadow-md object-cover transition-transform hover:scale-105"
+        />
+      </a>
+    </div>
+    </div>
+    <div class="mb-12 text-center">
+      <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+        Integrantes del Comité de Participación Ciudadana
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+        Conoce a los miembros que conforman el Comité de Participación Ciudadana
+        del Sistema Anticorrupción del Estado de Tlaxcala
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        teamMembers.map((member) => (
+          <TeamMemberCard
+            name={member.name}
+            position={member.position}
+            imageUrl={member.imageUrl}
+            curriculumUrl={member.curriculumUrl}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

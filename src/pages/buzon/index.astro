@@ -1,0 +1,47 @@
+---
+import BaseLayout from "@/components/base/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import buzon from '../../assets/images/hero_headers/Buzon_WEB_1.png';
+---
+
+<BaseLayout>
+  <section class="container mx-auto px-4 py-16">
+    <div class="mb-8 text-center">      
+      <div class="flex justify-center mb-8 w-auto">
+        <Image src={buzon} alt="Infografía Buzón Académico" class="rounded-lg shadow-md w-full" />
+      </div>
+      <div class="flex flex-col md:flex-row gap-6  mx-auto mt-8 justify-center">
+        <a 
+          href="/buzon/convocatoria" 
+          target="_blank" 
+          rel="noopener" 
+          class="flex-1 flex items-center justify-center bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white font-bold py-4 px-4 text-center rounded-lg shadow-lg transition-transform hover:scale-105 hover:from-fuchsia-600 hover:to-pink-600"
+          style="text-shadow: 0 1px 4px rgba(0,0,0,0.35); background: linear-gradient(to right, #d946ef, #ec4899), rgba(30,41,59,0.85);"
+        >
+          <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16V4m0 12l-4-4m4 4l4-4M4 20h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="z-10 drop-shadow-sm text-white" style="text-shadow: 0 1px 4px  background: rgba(30,41,59,0.85); border-radius: 0.5rem; padding: 0.25em 0.75em;">CONVOCATORIA</span>
+        </a>
+        <a 
+          href="/buzon/aviso_privacidad" 
+          target="_blank" 
+          rel="noopener" 
+          class="flex-1 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-4 px-4 text-center rounded-lg shadow-lg transition-transform hover:scale-105 hover:from-indigo-600 hover:to-blue-600"
+          style="text-shadow: 0 1px 4px rgba(0,0,0,0.35); background: linear-gradient(to right, #6366f1, #3b82f6), rgba(30,41,59,0.85);"
+        >
+          <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M12 4v16m0 0H3m9 0l-4-4m4 4l4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="z-10 drop-shadow-sm text-white" style="text-shadow: 0 1px 4px background: rgba(30,41,59,0.85); border-radius: 0.5rem; padding: 0.25em 0.75em;">AVISO DE PRIVACIDAD</span>
+        </a>
+        <a 
+          href="https://saetlax.org/buzon-de-propuestas-anticorrupcion/" 
+          target="_blank" 
+          rel="noopener" 
+          class="flex-1 flex items-center justify-center bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-4 px-4 text-center rounded-lg shadow-lg transition-transform hover:scale-105 hover:from-green-600 hover:to-emerald-600"
+          style="text-shadow: 0 1px 4px rgba(0,0,0,0.35); background: linear-gradient(to right, #22c55e, #10b981), rgba(30,41,59,0.85);"
+        >
+          <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8V6a5 5 0 00-10 0v2M5 8h14v10a2 2 0 01-2 2H7a2 2 0 01-2-2V8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="z-10 drop-shadow-sm text-white" style="text-shadow: 0 1px 4px  background: rgba(30,41,59,0.85); border-radius: 0.5rem; padding: 0.25em 0.75em;">BUZÓN ACADÉMICO DE PROPUESTAS ANTICORRUPCIÓN</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

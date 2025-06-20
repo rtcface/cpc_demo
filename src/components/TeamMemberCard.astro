@@ -1,0 +1,33 @@
+---
+interface Props {
+  name: string;
+  position: string;
+  imageUrl: string;
+  curriculumUrl: string;
+}
+
+const { name, position, imageUrl, curriculumUrl } = Astro.props;
+---
+
+<div
+  class="group relative overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
+>
+  <div class="aspect-[3/4] w-full overflow-hidden">
+    <img
+      src={imageUrl}
+      alt={`Fotografía de ${name}`}
+      class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+  <div class="p-6 text-center">
+    <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">{name}</h3>
+    <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">{position}</p>
+    <a
+      href={curriculumUrl}
+      class="inline-block rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+    >
+      Currículum
+    </a>
+  </div>
+</div>
+

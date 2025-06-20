@@ -19,11 +19,13 @@ export interface Props {
 
 const { title, description, image, noindex, canonical } = Astro.props;
 
-const siteTitle = "Astrogon";
-const siteDescription = "Astrogon is a simple and elegant Astro theme.";
+const siteTitle =
+  "Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala";
+const siteDescription =
+  "Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala";
 const siteImage = "@assets/og-image.png";
-const siteAuthor = "Jane Doe";
-const baseUrl = "https://janedoe.com";
+const siteAuthor = "CPC Tlaxcala";
+const baseUrl = "https://cpctlaxcala.org";
 ---
 
 <!DOCTYPE html>
@@ -47,7 +49,7 @@ const baseUrl = "https://janedoe.com";
       sizes="16x16"
       href="/favicon/favicon-16x16.png"
     />
-    
+
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta name="theme-name" content="pages" />
@@ -126,7 +128,7 @@ const baseUrl = "https://janedoe.com";
       integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
       crossorigin="anonymous"
       onload="renderMathInElement(document.body);"></script>
-      
+
     <!-- https://docs.astro.build/en/guides/view-transitions -->
     <ClientRouter fallback="swap" />
     <Tooltips interactive={false} delay={[333, 0]} />
@@ -135,7 +137,7 @@ const baseUrl = "https://janedoe.com";
     <Background />
     <Header />
     <main id="main-content" class="flex-1">
-      <slot/>
+      <slot />
     </main>
     <Footer />
     <!-- <ObserverScript /> -->

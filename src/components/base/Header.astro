@@ -8,40 +8,108 @@ const stickyHeader = true;
 
 const menu = [
   {
-    name: "Home",
+    name: "Inicio",
     url: "/",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Nosotros",
+    url: "/nosotros",
+    submenu: [
+      {
+        name: "Que es el CPC",
+        url: "/nosotros/que-es-cpc",
+      },
+      {
+        name: "Quienes Integran CPC",
+        url: "/nosotros/quienes-integran",
+      },
+      {
+        name: "Semblanzas",
+        url: "/nosotros/semblanzas",
+      },
+      {
+        name: "Que Hace el CPC",
+        url: "/nosotros/que-hace",
+      },
+      {
+        name: "Que NO Hace el CPC",
+        url: "/nosotros/que-no-hace",
+      },
+      {
+        name: "Objetivo del CPC",
+        url: "/nosotros/objetivo",
+      },
+      {
+        name: "Cuales son sus Funciones",
+        url: "/nosotros/funciones",
+      },
+    ],
   },
   {
-    name: "Docs",
-    url: "/docs",
+    name: "Misión y Visión",
+    url: "/mision-vision",
+    submenu: [
+      {
+        name: "Misión",
+        url: "/mision-vision/mision",
+      },
+      {
+        name: "Visión",
+        url: "/mision-vision/vision",
+      },
+    ],
   },
   {
-    name: "Blog",
-    url: "/blog",
+    name: "Normatividad",
+    url: "/normatividad",
+    submenu: [
+      {
+        name: "Internacional",
+        url: "/normatividad/internacional",
+      },
+      {
+        name: "Nacional",
+        url: "/normatividad/nacional",
+      },
+      {
+        name: "Estatal",
+        url: "/normatividad/estatal",
+      },
+      {
+        name: "Interna",
+        url: "/normatividad/interna",
+      },
+    ],
   },
   {
-    name: "Recipes",
-    url: "/recipes",
+    name: "Sesiones",
+    url: "/sesiones",
+    submenu: [
+      {
+        name: "Calendario",
+        url: "/sesiones/calendario",
+      },
+      {
+        name: "Sesiones en Vivo",
+        url: "/sesiones/en-vivo",
+      },
+      {
+        name: "Ordinaria",
+        url: "/sesiones/ordinaria",
+      },
+      {
+        name: "Extraordinaria",
+        url: "/sesiones/extraordinaria",
+      },
+    ],
   },
   {
-    name: "Poetry",
-    url: "/poetry",
+    name: "Línea de Tiempo",
+    url: "/linea-tiempo",
   },
   {
-    name: "Index Cards",
-    url: "/index-cards",
-  },
-  {
-    name: "Authors",
-    url: "/authors",
-  },
-  {
-    name: "Portfolio",
-    url: "/portfolio",
+    name: "Contacto",
+    url: "/contacto",
   },
 ];
 ---
@@ -75,7 +143,7 @@ const menu = [
     >
       {
         menu.map((item) => (
-          <li class="">
+          <li class="relative group">
             <a
               href={item.url}
               class={`block p-2 font-secondary font-semibold text-txt-p transition dark:text-darkmode-txt-p lg:px-2 lg:py-3 ${
@@ -85,6 +153,24 @@ const menu = [
             >
               {item.name}
             </a>
+            {item.submenu && (
+              <ul class="absolute left-0 top-full z-50 hidden min-w-[200px] rounded-lg bg-white p-2 shadow-lg dark:bg-gray-800 group-hover:block">
+                {item.submenu.map((subItem) => (
+                  <li>
+                    <a
+                      href={subItem.url}
+                      class={`block rounded p-2 text-sm font-secondary text-txt-p transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 ${
+                        (pathname === `${subItem.url}/` ||
+                          pathname === subItem.url) &&
+                        "active"
+                      }`}
+                    >
+                      {subItem.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))
       }
@@ -101,3 +187,12 @@ const menu = [
     </div>
   </nav>
 </header>
+
+<style>
+  .active {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  #nav-menu:has(input#nav-toggle:checked) {
+    @apply block;
+  }
+</style>

@@ -1,25 +1,96 @@
 ---
 import Social from "@components/common/Social.astro";
+import { IoLocationSharp, IoMailSharp, IoCallSharp } from "react-icons/io5";
 ---
 
-<footer class="glass container lg:my-4 lg:rounded-lg intersect:animate-fadeUp opacity-0">
-  <div class="row py-2 lg:py-0 items-center flex-wrap-reverse">
-    <div class="text-center lg:col-6 lg:mb-0 lg:text-left">
-      <ul>
-        <li class="m-2 inline-block">
-          <a href="/terms">&copy; Jane Doe 2025</a>
-        </li>
-      </ul>
+<footer class="glass container mt-8 lg:my-4 lg:rounded-lg">
+  <div class="px-4 py-8 lg:py-12">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- About CPC -->
+      <div>
+        <h3 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">
+          Sobre el CPC
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Comité de Participación Ciudadana del Sistema Anticorrupción del
+          Estado de Tlaxcala
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">
+          Contacto
+        </h3>
+        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+          <li class="flex items-start">
+            <IoLocationSharp
+              className="mr-2 mt-1 h-5 w-5 flex-shrink-0 text-blue-600"
+            />
+            <span>Calle Allende No. 23, Col. Centro, Tlaxcala, Tlax.</span>
+          </li>
+          <li class="flex items-center">
+            <IoMailSharp className="mr-2 h-5 w-5 flex-shrink-0 text-blue-600" />
+            <a href="mailto:cpc.tlaxcala@gmail.com" class="hover:text-blue-600">
+              cpc.tlaxcala@gmail.com
+            </a>
+          </li>
+          <li class="flex items-center">
+            <IoCallSharp className="mr-2 h-5 w-5 flex-shrink-0 text-blue-600" />
+            <a href="tel:+522464666632" class="hover:text-blue-600">
+              246 466 6632
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">
+          Enlaces Rápidos
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+          <li>
+            <a href="/nosotros/que-es-cpc" class="hover:text-blue-600"
+              >¿Qué es el CPC?</a
+            >
+          </li>
+          <li>
+            <a href="/normatividad" class="hover:text-blue-600">Normatividad</a>
+          </li>
+          <li>
+            <a href="/sesiones" class="hover:text-blue-600">Sesiones</a>
+          </li>
+          <li>
+            <a href="/contacto" class="hover:text-blue-600">Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h3 class="mb-4 text-lg font-bold text-gray-900 dark:text-white">
+          Redes Sociales
+        </h3>
+        <div class="flex space-x-4">
+          <Social
+            links={{
+              facebook: "https://www.facebook.com/CPCTlaxcala",
+              twitter: "https://twitter.com/CPCTlaxcala",
+              youtube: "https://www.youtube.com/CPCTlaxcala",
+            }}
+          />
+        </div>
+      </div>
     </div>
-    <div class="text-center lg:col-6 lg:my-0 flex items-center justify-center lg:justify-end">
-      <Social
-        links={{
-          facebook: "https://www.facebook.com/",
-          github: "https://www.github.com/",
-          instagram: "https://www.instagram.com/",
-          linkedIn: "https://www.linkedin.com/",
-        }}
-      />
+
+    <!-- Copyright -->
+    <div class="mt-8 border-t border-gray-200 pt-8 dark:border-gray-700">
+      <p class="text-center text-sm text-gray-600 dark:text-gray-300">
+        © {new Date().getFullYear()} Comité de Participación Ciudadana del
+        Sistema Anticorrupción del Estado de Tlaxcala. Todos los derechos
+        reservados.
+      </p>
     </div>
   </div>
 </footer>
