@@ -1,0 +1,24 @@
+---
+import type { IntegrantesEntry } from "@/types";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import IntegranteCard from "@components/integrantes/Card.astro";
+
+interface Props {
+  integranteIndex: IntegrantesEntry;
+  entries: IntegrantesEntry[];
+}
+
+const { integranteIndex: integranteIndex, entries } = Astro.props;
+---
+
+<BaseLayout title={integranteIndex.data.title} description={integranteIndex.data.description}>
+  <PageHeader title={integranteIndex.data.title} />
+  <section class="section-sm pb-0">
+    <div class="container">
+      <div class="row justify-center">
+        {entries.map((entry) => <IntegranteCard entry={entry} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

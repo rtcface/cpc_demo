@@ -33,10 +33,12 @@ const SearchPage = ({ searchList }: Props) => {
     minMatchCharLength: 3,
     threshold: 0.5,
   });
-
+  
   useEffect(() => {
     const searchUrl = new URLSearchParams(window.location.search);
     const searchStr = searchUrl.get("q");
+
+    console.log(searchStr);
     if (searchStr) setInputVal(searchStr);
 
     setTimeout(function () {
@@ -47,8 +49,7 @@ const SearchPage = ({ searchList }: Props) => {
 
   useEffect(() => {
     let inputResult = inputVal.length > 2 ? fuse.search(inputVal) : [];
-    setSearchResults(inputResult);
-
+    (inputResult);
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search);
       searchParams.set("q", inputVal);

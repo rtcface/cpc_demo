@@ -8,4 +8,4 @@ social:
   email: "janedoe@janedoe.com"
 ---
 
-**Presidenta**
+Presidenta

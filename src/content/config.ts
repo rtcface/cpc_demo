@@ -24,8 +24,8 @@ const social = z.object({
   youtube: z.string().optional(),
 });
 
-const about = defineCollection({
-  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/about" }),
+const nosotros = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/nosotros" }),
   schema: ({ image }) =>
     searchable.extend({
       image: image().optional(),
@@ -33,10 +33,10 @@ const about = defineCollection({
     }),
 });
 
-const authors = defineCollection({
+const integrantes = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
-    base: "./src/content/authors",
+    base: "./src/content/integrantes",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -164,14 +164,7 @@ const terms = defineCollection({
 
 // Export collections
 export const collections = {
-  about,
-  authors,
-  blog,
-  docs,
-  home,
-  indexCards,
-  poetry,
-  portfolio,
-  recipes,
-  terms,
+  nosotros,
+  integrantes,
+ 
 };
