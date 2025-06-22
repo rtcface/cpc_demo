@@ -47,6 +47,20 @@ const integrantes = defineCollection({
     }),
 });
 
+const informacion = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/informacion",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      email: z.string().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+      social: social.optional(),
+    }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
@@ -166,5 +180,13 @@ const terms = defineCollection({
 export const collections = {
   nosotros,
   integrantes,
- 
+  informacion,
+  blog,
+  docs,
+  home,
+  indexCards,
+  poetry,
+  portfolio,
+  recipes,
+  terms,
 };

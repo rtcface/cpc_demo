@@ -5,6 +5,15 @@ export type GenericEntry = CollectionEntry<CollectionKey>;
 
 export type NosotrosEntry = CollectionEntry<"nosotros">;
 export type IntegrantesEntry = CollectionEntry<"integrantes">;
+export type InformationEntry = CollectionEntry<"informacion">;
+
+// Tipos específicos para las páginas de información
+export type SemblanzasEntry = CollectionEntry<"informacion">;
+export type QueHaceEntry = CollectionEntry<"informacion">;
+export type QueNoHaceEntry = CollectionEntry<"informacion">;
+export type ObjetivoEntry = CollectionEntry<"informacion">;
+export type FuncionesEntry = CollectionEntry<"informacion">;
+
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
 export type HomeEntry = CollectionEntry<"home">;
@@ -17,12 +26,7 @@ export type TermsEntry = CollectionEntry<"terms">;
 export type SearchableEntry =
   | NosotrosEntry
   | IntegrantesEntry
-  | BlogEntry
-  | DocsEntry
-  | PoetryEntry
-  | PortfolioEntry
-  | RecipesEntry
-  | TermsEntry;
+  | InformationEntry;
 
 export type SocialLinks = {
   discord?: string;

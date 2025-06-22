@@ -49,7 +49,7 @@ const SearchPage = ({ searchList }: Props) => {
 
   useEffect(() => {
     let inputResult = inputVal.length > 2 ? fuse.search(inputVal) : [];
-    (inputResult);
+    setSearchResults(inputResult);
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search);
       searchParams.set("q", inputVal);
