@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   name: string;
   position: string;
-  imageUrl: string;
+  imageUrl: ImageMetadata;
   curriculumUrl: string;
 }
 
@@ -13,11 +16,17 @@ const { name, position, imageUrl, curriculumUrl } = Astro.props;
   class="group relative overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
 >
   <div class="aspect-[3/4] w-full overflow-hidden">
-    <img
+    <Image
       src={imageUrl}
       alt={`Fotografía de ${name}`}
       class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+      width={400}
+      height={533}
+      fit="cover"
+      loading="lazy"
     />
+
+    
   </div>
   <div class="p-6 text-center">
     <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">{name}</h3>
