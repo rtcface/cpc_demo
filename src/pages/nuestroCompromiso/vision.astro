@@ -1,0 +1,10 @@
+---
+import type { NuestroCompromisoEntry } from "@/types";
+import EntryLayout from "@components/nuestroCompromiso/EntryLayout.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("nuestroCompromiso");
+const entry = entries.find(entry => entry.id === "vision") as NuestroCompromisoEntry;
+---
+
+<EntryLayout entry={entry} /> 

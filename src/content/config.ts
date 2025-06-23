@@ -61,6 +61,34 @@ const informacion = defineCollection({
     }),
 });
 
+const nuestroCompromiso = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/nuestroCompromiso",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      email: z.string().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+      social: social.optional(),
+    }),
+});
+
+const normatividad = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/normatividad",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      email: z.string().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+      social: social.optional(),
+    }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
@@ -181,6 +209,7 @@ export const collections = {
   nosotros,
   integrantes,
   informacion,
+  nuestroCompromiso,
   blog,
   docs,
   home,
@@ -189,4 +218,5 @@ export const collections = {
   portfolio,
   recipes,
   terms,
+  normatividad,
 };

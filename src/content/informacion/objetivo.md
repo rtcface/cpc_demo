@@ -4,7 +4,4 @@ description: "Conoce la misión y objetivos principales del Comité de Participa
 draft: false
 ---
 
-
-
-El Comité de Participación Ciudadana (CPC) del Sistema Anticorrupción del Estado de Tlaxcala tiene como objetivo fundamental **promover la participación activa de la sociedad en la prevención, detección y combate de la corrupción**, contribuyendo así al fortalecimiento de la transparencia, la rendición de cuentas y la integridad en el ejercicio de la función pública.
-
+Los integrantes del Comité de Participación Ciudadana coadyuvan en el cumplimiento de los objetivos del Comité Coordinador, tales como; elaboración de políticas públicas e instrumentos para el combate a la corrupcion.

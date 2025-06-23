@@ -6,6 +6,8 @@ export type GenericEntry = CollectionEntry<CollectionKey>;
 export type NosotrosEntry = CollectionEntry<"nosotros">;
 export type IntegrantesEntry = CollectionEntry<"integrantes">;
 export type InformationEntry = CollectionEntry<"informacion">;
+export type NuestroCompromisoEntry = CollectionEntry<"nuestroCompromiso">;
+export type NormatividadEntry = CollectionEntry<"normatividad">;
 
 // Tipos específicos para las páginas de información
 export type SemblanzasEntry = CollectionEntry<"informacion">;
@@ -26,7 +28,9 @@ export type TermsEntry = CollectionEntry<"terms">;
 export type SearchableEntry =
   | NosotrosEntry
   | IntegrantesEntry
-  | InformationEntry;
+  | InformationEntry
+  | NuestroCompromisoEntry
+  | NormatividadEntry;
 
 export type SocialLinks = {
   discord?: string;
@@ -39,7 +43,7 @@ export type SocialLinks = {
   tiktok?: string;
   website?: string;
   youtube?: string;
-}
+};
 
 export type EntryReference = {
   id: string;

@@ -2,11 +2,11 @@
 import BaseLayout from "@components/base/BaseLayout.astro";
 import { markdownify } from "@lib/textConverter";
 
-import type { InformationEntry } from "@/types";
+import type { NuestroCompromisoEntry } from "@/types";
 import { render } from "astro:content";
 
 interface Props {
-  entry: InformationEntry;
+  entry: NuestroCompromisoEntry;
 }
 
 const { entry } = Astro.props;
@@ -18,11 +18,9 @@ const { Content } = await render(entry);
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">
-        <div class="glass rounded-lg p-4 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue">
-            <h2 set:html={markdownify(title)} class="h3 mb-3" />
-            <div class="prose prose-blue max-w-none whitespace-pre-line">
-              <Content />
-            </div>
+        <div class="glass rounded-lg text- p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue">
+            <h2 set:html={markdownify(title)} class="h3 mb-6" />
+            <Content />
         </div>
       </div>
     </div>
