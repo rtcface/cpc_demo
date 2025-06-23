@@ -4,9 +4,9 @@ description: "Conoce la historia y trayectoria de los integrantes del Comité de
 draft: false
 ---
 
-# Semblanzas del Comité de Participación Ciudadana
+## Semblanzas del Comité de Participación Ciudadana
 
-## Dra. Elizabeth Olivares Guevara - Presidenta
+### Dra. Elizabeth Olivares Guevara - Presidenta
 
 La Dra. Elizabeth Olivares Guevara es una destacada académica y activista social con amplia experiencia en temas de transparencia y rendición de cuentas. Doctora en Ciencias Políticas y Sociales, ha dedicado su carrera profesional al estudio y promoción de la participación ciudadana y la lucha contra la corrupción.
 

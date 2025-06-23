@@ -1,5 +1,5 @@
 ---
-title: "Funciones del CPC"
+title: "Visión"
 description: "Conoce las funciones y responsabilidades legales del Comité de Participación Ciudadana"
 draft: false
 ---
