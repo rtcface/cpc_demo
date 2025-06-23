@@ -1,7 +1,23 @@
 ---
-title: "Normatividad Nacional"
-description: "Normativa nacional"
+title: "Marco Normativo Nacional"
+description: "Marco Normativo Nacional"
 draft: false
 ---
 
-El Comité de Participación Ciudadana (CPC) del Sistema Anticorrupción del Estado de Tlaxcala tiene asignadas funciones específicas establecidas en el marco legal vigente. Estas funciones están diseñadas para promover la participación ciudadana efectiva en la prevención, detección y combate de la corrupción.
+Constitución Política de los Estados Unidos Mexicanos.
+
+Ley General del Sistema Nacional Anticorrupción.
+
+Ley General de Responsabilidades Administrativas.
+
+Ley General de Transparencia y Acceso a la Información Pública.
+
+Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados.
+
+Ley de Fiscalización y Rendición de Cuentas de la - Federación.
+
+Ley General de Archivos.
+
+Código Nacional de Procedimientos Penales.
+
+Política Nacional Anticorrupción.

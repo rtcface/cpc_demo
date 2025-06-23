@@ -4,6 +4,4 @@ description: "Conoce las funciones y responsabilidades legales del Comité de Pa
 draft: false
 ---
 
-
-El Comité de Participación Ciudadana (CPC) del Sistema Anticorrupción del Estado de Tlaxcala tiene asignadas funciones específicas establecidas en el marco legal vigente. Estas funciones están diseñadas para promover la participación ciudadana efectiva en la prevención, detección y combate de la corrupción.
-
+Ser una instancia ciudadana que se destaque a nivel local y Nacional en el cumplimiento de los objetivos para los que fue creada, diseñando mecanismos encaminados a prevenir actos de corrupción desde el fortalecimiento de la ética e integridad dirigida a la sociedad en general, así como fortalecer los mecanismos de ciudadana que participación coadyuven a identificar los riesgos de corrupción tanto en el sector público como privado.

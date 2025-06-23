@@ -17,3 +17,25 @@ Proponemos al Comité Coordinador, a través de su participación en la Comisió
 b) Proyectos de mejora a los instrumentos, lineamientos y mecanismos para el suministro, intercambio, sistematización y actualización de la información que generen eren las instituciones estatales y municipales competentes en las materias reguladas por esta Ley, y
 
 c) Proyectos de mejora a los instrumentos, lineamientos y mecanismos requeridos para la operación del sistema electrónico de denuncia y queja.
+
+Opinamos sobre el programa anual de trabajo del Comité Coordinador;
+
+Realizamos observaciones, a través de su participación en la Comisión Ejecutiva, a los proyectos de informe anual del Comité Coordinador;
+
+Proponemos al Comité Coordinador, a través de su participación en la Comisión Ejecutiva, la emisión de recomendaciones no vinculantes;
+
+Promovemos la colaboración con instituciones en la materia, con el propósito de elaborar investigaciones sobre las políticas públicas para la prevención, detección y combate de hechos de corrupción o faltas administrativas;
+
+Damos seguimiento al funcionamiento del Sistema Estatal, y
+
+Proponemos al Comité Coordinador mecanismos para facilitar el funcionamiento de las instancias de contraloría social, así como para recibir directamente información generada por esas instancias y formas de participación ciudadana.
+
+Proponemos al Comité Coordinador, a través de su participación en la Comisión Ejecutiva, mecanismos para que la sociedad participe en la prevención y denuncia de faltas administrativas y hechos de corrupción;
+
+Llevamos un registro voluntario de las organizaciones de la Sociedad Civil que deseen colaborar de manera coordinada con el Comité de Participación Ciudadana para establecer una red de participación ciudadana, conforme a sus normas de carácter interno;
+
+Opinamos o proponemos, a través de su participación en la Comisión Ejecutiva, indicadores y metodologías para la medición y seguimiento del fenómeno de la corrupción, así como para la evaluación del cumplimiento de los objetivos y metas de las políticas estatales en la materia y los programas y acciones que implementen las autoridades que conforman el Sistema Estatal;
+
+Proponemos mecanismos de articulación entre organizaciones de la Sociedad Civil, la academia y grupos ciudadanos;
+
+Proponemos reglas y procedimientos mediante los cuales se recibirán las peticiones, solicitudes y denuncias fundadas y motivadas que la Sociedad Civil pretenda hacer llegar al órgano de Fiscalización Superior;
