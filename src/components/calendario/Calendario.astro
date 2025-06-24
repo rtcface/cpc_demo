@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+---
+
+<BaseLayout title="Calendario" description="Calendario">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="glass rounded-lg p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue"> 
+            <button id="nextButton">Go Next!</button>
+            <div id="calendar"></div>
+        </div>
+      </div>
+    </div>
+</BaseLayout>
+
+<script>
+  import { Calendar } from '@fullcalendar/core';
+  import dayGridPlugin from '@fullcalendar/daygrid';
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+    const nextButton = document.getElementById('nextButton');
+    
+    if (!calendarEl) return;
+    
+    const calendar = new Calendar(calendarEl, {
+      plugins: [dayGridPlugin],
+      initialView: 'dayGridMonth',
+      height: 'auto'
+    });
+    
+    calendar.render();
+
+    // Handle next button
+    if (nextButton) {
+      nextButton.addEventListener('click', function() {
+        calendar.next();
+      });
+    }
+  });
+</script>
