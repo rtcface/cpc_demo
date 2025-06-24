@@ -1,0 +1,57 @@
+---
+import TeamMemberCard from "./TeamMemberCard.astro";
+
+// Import team member images
+import elizabethOlivares from '@assets/images/team/elizabeth-olivares.jpg';
+import carlosPerez from '@assets/images/team/carlos-perez.jpg';
+import juanCruz from '@assets/images/team/juan-cruz.jpg';
+import victorFlores from '@assets/images/team/victor-flores.png';
+const teamMembers = [
+  {
+    name: "Dra. Elizabeth Olivares Guevara",
+    position: "Presidenta",
+    imageUrl: elizabethOlivares,
+    curriculumUrl: "/curriculum/elizabeth-olivares",
+  },
+  {
+    name: "Lic. Carlos Jonathan Pérez Ramírez",
+    position: "Integrante",
+    imageUrl: carlosPerez,
+    curriculumUrl: "/curriculum/carlos-perez",
+  },
+  {
+    name: "Lic. Juan Carlos Cruz Jiménez",
+    position: "Integrante",
+    imageUrl: juanCruz,
+    curriculumUrl: "/curriculum/juan-cruz",
+  },
+  {
+    name: "Lic. Víctor Cósetl Flores",
+    position: "Integrante",
+    imageUrl: victorFlores,
+    curriculumUrl: "/curriculum/victor-flores",
+  },
+];
+---
+
+<div class="mb-12 text-center">
+    <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+      Integrantes del Comité de Participación Ciudadana
+    </h1>
+    <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+      Conoce a los miembros que conforman el Comité de Participación Ciudadana
+      del Sistema Anticorrupción del Estado de Tlaxcala
+    </p>
+  </div>
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      teamMembers.map((member) => (
+        <TeamMemberCard
+          name={member.name}
+          position={member.position}
+          imageUrl={member.imageUrl}
+          curriculumUrl={member.curriculumUrl}
+        />
+      ))
+    }
+  </div>

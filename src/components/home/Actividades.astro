@@ -1,0 +1,20 @@
+---
+import PageHeader from "@components/common/PageHeader.astro";
+import Slider, { type ImageItem } from '@components/common/Slider.astro'
+const images:ImageItem[]=[{
+    src:"/docs/images/acciones-relevantes/25_dias_naranja.png",
+    alt:"25_dias_naranja.png"
+},{
+    src:"/docs/images/acciones-relevantes/25_dias_naranja.png",
+    alt:"25_dias_naranja.png"
+},]
+
+
+
+
+---
+
+<PageHeader title="Actividades Relevantes"/>
+<Slider images={images}/>
+
+
