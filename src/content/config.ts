@@ -47,6 +47,18 @@ const integrantes = defineCollection({
     }),
 });
 
+const nuestroTrabajo = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/nuestro-trabajo",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+    }),
+});
+
 const informacion = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
@@ -219,4 +231,5 @@ export const collections = {
   recipes,
   terms,
   normatividad,
+  "nuestro-trabajo": nuestroTrabajo,
 };

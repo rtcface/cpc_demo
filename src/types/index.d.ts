@@ -23,6 +23,7 @@ export type IndexCardsEntry = CollectionEntry<"indexCards">;
 export type PoetryEntry = CollectionEntry<"poetry">;
 export type PortfolioEntry = CollectionEntry<"portfolio">;
 export type RecipesEntry = CollectionEntry<"recipes">;
+export type NuestroTrabajoEntry = CollectionEntry<"nuestro-trabajo">;
 export type TermsEntry = CollectionEntry<"terms">;
 
 export type SearchableEntry =
@@ -30,7 +31,8 @@ export type SearchableEntry =
   | IntegrantesEntry
   | InformationEntry
   | NuestroCompromisoEntry
-  | NormatividadEntry;
+  | NormatividadEntry
+  | NuestroTrabajoEntry;
 
 export type SocialLinks = {
   discord?: string;

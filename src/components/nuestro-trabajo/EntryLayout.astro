@@ -1,0 +1,63 @@
+---
+import type { NuestroTrabajoEntry } from "@/types";
+import Share from "@components/common/Share.astro";
+import { Image } from "astro:assets";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import { upperHumanize, markdownify, slugify } from "@lib/textConverter";
+
+import {
+  FaRegClock,
+  FaRegUserCircle,
+  FaUtensils,
+  FaSeedling,
+} from "react-icons/fa";
+
+interface Props {
+  entry: NuestroTrabajoEntry;
+}
+
+const { entry } = Astro.props;
+const {
+  title, 
+  description,
+  image,
+  imageAlt,  
+} = entry.data;
+---
+
+<BaseLayout title={title} description={description} image={image?.src}>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10 flex flex-wrap content-start">
+          <!-- Title -->
+          <h1 set:html={title} class="p-2 col basis-full min-w-72" />
+          <!-- Cover Photo -->
+          {
+            image && (
+              <div class="col basis-2/3 p-2 min-w-72">
+                <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                  <Image
+                    class="w-full rounded-lg"
+                    src={image}
+                    alt={imageAlt}
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                  />
+                </div>
+              </div>
+            )
+          }
+         
+        </article>
+        <!-- Share -->
+        <div
+          class="flex col-10 p-2 items-center justify-center lg:justify-end px-6"
+        >
+         
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
