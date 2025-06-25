@@ -7,7 +7,15 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, image, imageAlt } = entry.data;
+const { title, image, imageAlt, fotos } = entry.data;
+
+// Convertir rutas @assets/ a rutas que funcionen en el navegador
+const convertAssetPath = (path: string) => {
+  if (path.startsWith('@assets/')) {
+    return path.replace('@assets/', '/src/assets/');
+  }
+  return path;
+};
 ---
 
 <div
@@ -17,15 +25,27 @@ const { title, image, imageAlt } = entry.data;
     <a class="group hover:opacity-100" href={`/nuestro-trabajo/${entry.id}`}>
       <div class="relative rounded-lg pb-9/16 overflow-hidden">
         {
-          image && (
-            <Image
-              class="absolute rounded-lg object-cover w-full h-full group-hover:scale-[105%] transition-all duration-300"
-              src={image}
-              alt={imageAlt}
-              width={1280}
-              height={720}
-              loading="eager"
-            />
+          fotos && Array.isArray(fotos) && fotos.length > 0 ? (
+            fotos.map((foto, idx) => (
+              <img
+                class="absolute rounded-lg object-cover w-full h-full group-hover:scale-[105%] transition-all duration-300"
+                src={convertAssetPath(foto)}
+                alt={imageAlt}
+                loading={idx === 0 ? "eager" : "lazy"}
+                style={idx === 0 ? {} : { display: "none" }}
+              />
+            ))
+          ) : (
+            image && (
+              <Image
+                class="absolute rounded-lg object-cover w-full h-full group-hover:scale-[105%] transition-all duration-300"
+                src={image}
+                alt={imageAlt}
+                width={1280}
+                height={720}
+                loading="eager"
+              />
+            )
           )
         }
         <div

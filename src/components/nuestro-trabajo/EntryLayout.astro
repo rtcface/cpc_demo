@@ -21,8 +21,17 @@ const {
   title, 
   description,
   image,
-  imageAlt,  
+  imageAlt,
+  fotos,
 } = entry.data;
+
+// Convertir rutas @assets/ a rutas que funcionen en el navegador
+const convertAssetPath = (path: string) => {
+  if (path.startsWith('@assets/')) {
+    return path.replace('@assets/', '/src/assets/');
+  }
+  return path;
+};
 ---
 
 <BaseLayout title={title} description={description} image={image?.src}>
@@ -32,21 +41,39 @@ const {
         <article class="lg:col-10 flex flex-wrap content-start">
           <!-- Title -->
           <h1 set:html={title} class="p-2 col basis-full min-w-72" />
-          <!-- Cover Photo -->
+          
+          <!-- Images -->
           {
-            image && (
-              <div class="col basis-2/3 p-2 min-w-72">
-                <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-                  <Image
-                    class="w-full rounded-lg"
-                    src={image}
-                    alt={imageAlt}
-                    width={1920}
-                    height={1080}
-                    loading="eager"
-                  />
+            fotos && Array.isArray(fotos) && fotos.length > 0 ? (
+                  <div class="grid grid-cols-1 gap-4">
+                    {
+                    fotos.map((foto, idx) => (
+                      <div class="relative rounded-lg overflow-hidden">
+                        <img
+                          class="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                          src={convertAssetPath(foto)}
+                          alt={`${imageAlt} - Imagen ${idx + 1}`}
+                          loading={idx < 3 ? "eager" : "lazy"}
+                        />
+                      </div>
+                    ))}
+                  </div>               
+              
+            ) : (
+              image && (
+                <div class="col basis-2/3 p-2 min-w-72">
+                  <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                    <Image
+                      class="w-full rounded-lg"
+                      src={image}
+                      alt={imageAlt}
+                      width={1920}
+                      height={1080}
+                      loading="eager"
+                    />
+                  </div>
                 </div>
-              </div>
+              )
             )
           }
          
