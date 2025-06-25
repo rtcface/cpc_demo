@@ -18,3 +18,16 @@ const images:ImageItem[]=[{
 <Slider images={images}/>
 
 
+<script>
+	// Initialize Flowbite carousel
+	import { Carousel } from 'flowbite';
+	
+	// Initialize all carousels on the page
+	const carouselElement = document.getElementById('default-carousel');
+	
+	if (carouselElement) {
+		const carousel = new Carousel(carouselElement);
+	}
+</script>
+
+
