@@ -56,7 +56,7 @@ const nuestroTrabajo = defineCollection({
     searchable.extend({
       image: image().optional(),
       imageAlt: z.string().default(""),
-      fotos: z.array(z.string()).optional(),
+      fotos: z.array(image()).optional(),
     }),
 });
 

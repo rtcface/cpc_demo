@@ -9,7 +9,7 @@ fotos:
     "@assets/images/acciones-relevantes/Ganadores.png",
     "@assets/images/acciones-relevantes/intercambio.png",
     "@assets/images/acciones-relevantes/mejora_regulatoria.png",
-    "@assets/images/acciones-relevantes/Perspectiva_genero",
+    "@assets/images/acciones-relevantes/Perspectiva_genero.png",
     "@assets/images/acciones-relevantes/semana_integridad.png",
     "@assets/images/acciones-relevantes/transformacion.png",
     "@assets/images/acciones-relevantes/valores_eticos.png",

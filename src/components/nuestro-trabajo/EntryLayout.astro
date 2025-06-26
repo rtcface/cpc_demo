@@ -1,16 +1,8 @@
 ---
 import type { NuestroTrabajoEntry } from "@/types";
-import Share from "@components/common/Share.astro";
 import { Image } from "astro:assets";
 import BaseLayout from "@components/base/BaseLayout.astro";
-import { upperHumanize, markdownify, slugify } from "@lib/textConverter";
 
-import {
-  FaRegClock,
-  FaRegUserCircle,
-  FaUtensils,
-  FaSeedling,
-} from "react-icons/fa";
 
 interface Props {
   entry: NuestroTrabajoEntry;
@@ -25,13 +17,7 @@ const {
   fotos,
 } = entry.data;
 
-// Convertir rutas @assets/ a rutas que funcionen en el navegador
-const convertAssetPath = (path: string) => {
-  if (path.startsWith('@assets/')) {
-    return path.replace('@assets/', '/src/assets/');
-  }
-  return path;
-};
+
 ---
 
 <BaseLayout title={title} description={description} image={image?.src}>
@@ -45,20 +31,24 @@ const convertAssetPath = (path: string) => {
           <!-- Images -->
           {
             fotos && Array.isArray(fotos) && fotos.length > 0 ? (
-                  <div class="grid grid-cols-1 gap-4">
-                    {
-                    fotos.map((foto, idx) => (
-                      <div class="relative rounded-lg overflow-hidden">
-                        <img
-                          class="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-                          src={convertAssetPath(foto)}
-                          alt={`${imageAlt} - Imagen ${idx + 1}`}
-                          loading={idx < 3 ? "eager" : "lazy"}
+              <div class="row basis-full p-2">
+                <div class="overflow-x-auto pb-4 scrollbar-hide">
+                  {fotos.map((foto) => (
+                    <div class="w-full pb-5">
+                      <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                        <Image
+                          class="w-full h-auto rounded-lg object-cover group-hover:scale-[105%] transition-all duration-300"
+                          src={foto}
+                          alt={imageAlt}
+                          width={620}
+                          height={620}
+                          loading="eager"
                         />
                       </div>
-                    ))}
-                  </div>               
-              
+                    </div>
+                  ))}
+                </div>
+              </div>
             ) : (
               image && (
                 <div class="col basis-2/3 p-2 min-w-72">
