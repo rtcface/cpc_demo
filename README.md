@@ -1,89 +1,71 @@
+# Sitio Web del Comité de Participación Ciudadana de Tlaxcala
 
-<div align="center">
-  <img src="src/assets/astrogon-logo.svg" style="width:80%;" alt="Astrogon Logo" align="center" />
-</div>
+Este es el repositorio del código fuente del sitio web oficial del Comité de Participación Ciudadana (CPC) del Estado de Tlaxcala, México. El sitio está construido sobre la plantilla [astrogon](https://github.com/astrogon/astrogon).
 
----
+## Sobre el Comité de Participación Ciudadana de Tlaxcala
 
-[![GitHub License](https://img.shields.io/github/license/astrogon/astrogon?color=red)](https://github.com/astrogon/astrogon/blob/main/LICENSE) [![Repo Size](https://img.shields.io/github/repo-size/astrogon/astrogon)](https://github.com/astrogon/astrogon) ![GitHub branch check runs](https://img.shields.io/github/check-runs/astrogon/astrogon/main) [![Website](https://img.shields.io/website?up_message=online&up_color=limegreen&down_message=offline&down_color=yellow&url=https%3A%2F%2Fastrogon.reednel.com%2F)](https://astrogon.reednel.com/)
+El Comité de Participación Ciudadana de Tlaxcala (CPC Tlaxcala) es un órgano colegiado que tiene como objetivo coadyuvar al cumplimiento de los objetivos del Comité Coordinador del Sistema Estatal Anticorrupción, así como ser la instancia de vinculación con las organizaciones sociales y académicas relacionadas con las materias del Sistema Estatal.
 
-Astrogon is a rapidly-customizable multipurpose website template built using Astro JS, Tailwind, and a sprinkle of React.
+El sitio web (cpc.saetlax.org) sirve como una plataforma para:
 
-## Features
+- Dar a conocer las actividades que realiza el Comité.
+- Publicar las semblanzas de sus integrantes.
+- Proporcionar acceso a las sesiones del Comité, tanto en vivo como grabadas.
+- Ofrecer información sobre la normatividad que rige al CPC.
+- Mantener un canal de contacto con la ciudadanía.
 
-### Content Collections
+## Características del Sitio Web
 
-- Blog
-  - Implements **Categories** and **Tags**, for easy filtering and searching
-- Documentation
-  - **Multi-level** document structure
-  - Toggleable **Doc Browser** sidebar
-  - Toggleable **Table of Contents** sidebar
-- Recipes
-  - Demonstrates a highly **templated structure**
-- Authors - A collection that can **link entries across collections** by the Author field
-- Poetry - A trim interface for a lightweight collection, demonstrating pagination over the content pages
-- Index Cards - A variation on the "Poetry" layout, where all content is kept in a single file, and displayed in a single page
-- And more:
-  - Homepage
-  - About/Bio
-  - Portfolio
-  - Terms and Conditions
-  - 404 page
+El sitio web cuenta con las siguientes secciones y características:
 
-#### Content Components & Features
+- **Inicio:** Página principal con información destacada.
+- **Conócenos:**
+  - ¿Qué es el CPC?
+  - Integrantes
+  - Semblanzas
+  - ¿Qué hace el CPC?
+  - ¿Qué NO hace el CPC?
+  - Objetivo del CPC
+  - Funciones
+  - Misión y Visión
+- **Normatividad:** Acceso a la normativa internacional, nacional, estatal e interna.
+- **Sesiones:** Calendario de sesiones y acceso a las transmisiones en vivo.
+- **Acciones CPC:** Información sobre las acciones y logros del Comité.
+- **Línea de Tiempo:** Un recuento cronológico de las actividades del CPC.
+- **Contacto:** Información de contacto para la ciudadanía.
 
-- **Accordion**/collapsible section
-- **Tabs** section
-- **Code Block** with syntax highlighting
-- **Quote Block**
-- **Notice Blocks** - note, tip, info, & warning
-- **Embedded YouTube Video**
-- Integrated **LaTeX** support for inline and block mathematical expressions
-- All the standard **MD/MDX** features, including footnotes, tables, and more
+## Empezando
 
-### Additional Features
+Este proyecto es un fork de [astrogon](https://github.com/astrogon/astrogon). Para empezar a trabajar con este proyecto, sigue las instrucciones a continuación.
 
-- Comprehensive **Light Mode** and **Dark Mode** support, with automatic detection of system preference
-- **Searchablility** over all content you choose to include
-- **Adaptive Layout** for all screen sizes, from phone a to a desktop monitor
-- **Tool Tips** that can be added seamlessly to any interactable element
-- **Breadcrumbs** for rapid navigation
-- Auto-populating **Related Content** section available for any content collection
-- Auto-calculating **Reading Time** available for any content collection
-- Togglable **Frosted Glass** effect on all components
-- Easily customizable color scheme and typography
-- Animated component **Transitions** for an elegant flourish
-- **Pagination** for any content collection
-- Component for **Social Media** sharing
-- Built-in patterns for **Search Engine Optimization**
+**Pre-requisitos:**
 
-Every one of these features was designed with modularity and customizability in mind, for the smoothest development experience possible. For more details, see [docs/customization.md](docs/customization.md).
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
 
-## Recommended Technologies
+**Instalación:**
 
-- [Git](https://git-scm.com)
-- [Node Version Manager](https://github.com/nvm-sh/nvm)
-- [Visual Studio Code](https://code.visualstudio.com/)
+1.  Clona este repositorio:
+    ```bash
+    git clone [https://github.com/rtcface/cpc_demo.git](https://github.com/rtcface/cpc_demo.git)
+    ```
+2.  Navega al directorio del proyecto:
+    ```bash
+    cd cpc_demo
+    ```
+3.  Instala las dependencias:
+    ```bash
+    npm install
+    ```
+    O si usas yarn:
+    ```bash
+    yarn install
+    ```
 
-See [docs/tech-stack.md](docs/tech-stack.md) for more details.
+**Desarrollo:**
 
-## Development Instructions
+Para iniciar el servidor de desarrollo, ejecuta:
 
-1. Fork this repository to your own GitHub account, then clone it to your local machine
-2. Use Node 22: `nvm install 22` or `nvm use 22`
-3. From the project directory, install Node dependencies: `npm install`
-4. From the project directory, build: `npm run dev`
-5. See your changes live at `http://localhost:4321`
-
-## License
-
-Astrogon is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-This template was originally inspired by the structures of [zeon-studio](https://github.com/zeon-studio)'s [astroplate](https://github.com/zeon-studio/astroplate), [jordienr](https://github.com/jordienr)'s [astro-design-system](https://github.com/jordienr/astro-design-system) and [TheOtterlord](https://github.com/TheOtterlord)'s [manual](https://github.com/TheOtterlord/manual).
-
-## Sponsorship
-
-[reednel](https://github.com/reednel) has dedicated hundreds of hours to building this template, and continues to maintain and improve on it. This software is fully Free and Open Source, but if you find value in it, a small donation [[here](https://github.com/sponsors/reednel)] would be warmly appreciated.
+```bash
+npm run dev
+```
