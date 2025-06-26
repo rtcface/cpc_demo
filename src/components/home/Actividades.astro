@@ -1,37 +1,61 @@
 ---
 import PageHeader from "@components/common/PageHeader.astro";
 import Slider, { type ImageItem } from '@components/common/Slider.astro'
-const images:ImageItem[]=[{
-    src:"/docs/images/acciones-relevantes/25_dias_naranja.png",
-    alt:"25_dias_naranja.png"
-},{
-    src:"/docs/images/acciones-relevantes/convocatoria_nueva_ABC.png",
-    alt:"convocatoria_nueva_ABC.png"
-},{
-    src:"/docs/images/acciones-relevantes/Curso_Dibujo_infantil.png",
-    alt:"Curso_Dibujo_infantil.png"
-},{
-    src:"/docs/images/acciones-relevantes/Ganadores.png",
-    alt:"Ganadores.png"
-},{
-    src:"/docs/images/acciones-relevantes/intercambio.png",
-    alt:"intercambio.png"
-},{
-    src:"/docs/images/acciones-relevantes/mejora_regulatoria.png",
-    alt:"mejora_regulatoria.png"
-},{
-    src:"/docs/images/acciones-relevantes/Perspectiva_genero.png",
-    alt:"Perspectiva_genero.png"
-},{
-    src:"/docs/images/acciones-relevantes/semana_integridad.png",
-    alt:"semana_integridad.png"
-},{
-    src:"/docs/images/acciones-relevantes/transformacion.png",
-    alt:"transformacion.png"
-},{
-    src:"/docs/images/acciones-relevantes/valores_eticos.png",
-    alt:"valores_eticos.png"
-},]
+
+// Import images from assets
+import diasNaranja from '@assets/images/acciones-relevantes/25_dias_naranja.png';
+import convocatoriaABC from '@assets/images/acciones-relevantes/convocatoria_nueva_ABC.png';
+import cursoDibujo from '@assets/images/acciones-relevantes/Curso_Dibujo_infantil.png';
+import ganadores from '@assets/images/acciones-relevantes/Ganadores.png';
+import intercambio from '@assets/images/acciones-relevantes/intercambio.png';
+import mejoraRegulatoria from '@assets/images/acciones-relevantes/mejora_regulatoria.png';
+import perspectivaGenero from '@assets/images/acciones-relevantes/Perspectiva_genero.png';
+import semanaIntegridad from '@assets/images/acciones-relevantes/semana_integridad.png';
+import transformacion from '@assets/images/acciones-relevantes/transformacion.png';
+import valoresEticos from '@assets/images/acciones-relevantes/valores_eticos.png';
+
+const images: ImageItem[] = [
+  {
+    src: diasNaranja,
+    alt: "25 días naranja"
+  },
+  {
+    src: convocatoriaABC,
+    alt: "Convocatoria nueva ABC"
+  },
+  {
+    src: cursoDibujo,
+    alt: "Curso de dibujo infantil"
+  },
+  {
+    src: ganadores,
+    alt: "Ganadores"
+  },
+  {
+    src: intercambio,
+    alt: "Intercambio"
+  },
+  {
+    src: mejoraRegulatoria,
+    alt: "Mejora regulatoria"
+  },
+  {
+    src: perspectivaGenero,
+    alt: "Perspectiva de género"
+  },
+  {
+    src: semanaIntegridad,
+    alt: "Semana de integridad"
+  },
+  {
+    src: transformacion,
+    alt: "Transformación"
+  },
+  {
+    src: valoresEticos,
+    alt: "Valores éticos"
+  }
+];
 
 ---
 
