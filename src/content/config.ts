@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { string } from "astro:schema";
 
 // May also need to update /src/types/index.d.ts when updating this file
 // When updating the set of searchable collections, update collectionList in /src/pages/search.astro
@@ -57,6 +58,19 @@ const nuestroTrabajo = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       fotos: z.array(image()).optional(),
+    }),
+});
+
+const estudiosProyectos = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/estudios-proyectos",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+      docs: z.array(z.string()).optional(),
     }),
 });
 
@@ -233,4 +247,5 @@ export const collections = {
   terms,
   normatividad,
   "nuestro-trabajo": nuestroTrabajo,
+  "estudios-proyectos": estudiosProyectos,
 };

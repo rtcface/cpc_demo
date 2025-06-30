@@ -24,6 +24,7 @@ export type PoetryEntry = CollectionEntry<"poetry">;
 export type PortfolioEntry = CollectionEntry<"portfolio">;
 export type RecipesEntry = CollectionEntry<"recipes">;
 export type NuestroTrabajoEntry = CollectionEntry<"nuestro-trabajo">;
+export type EstudiosProyectosEntry = CollectionEntry<"estudios-proyectos">;
 export type TermsEntry = CollectionEntry<"terms">;
 
 export type SearchableEntry =
@@ -32,6 +33,7 @@ export type SearchableEntry =
   | InformationEntry
   | NuestroCompromisoEntry
   | NormatividadEntry
+  | EstudiosProyectosEntry
   | NuestroTrabajoEntry;
 
 export type SocialLinks = {
