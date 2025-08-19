@@ -1,5 +1,6 @@
 ---
 title: Pendiente
+order: 4
 email: janedoe@email.com
 image: "@assets/images/utils/logo_cpc.png"
 social:

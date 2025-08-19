@@ -3,10 +3,10 @@ import type { IntegrantesEntry } from "@/types";
 import CollectionLayout from "@components/integrantes/CollectionLayout.astro";
 import { getEntries } from "@lib/contentParser";
 import { getIndex } from "@lib/contentParser";
-import { sortByTitle } from "@lib/sortFunctions";
+import { sortByOrder } from "@lib/sortByOrder";
 
 const authorIndex = await getIndex("integrantes") as IntegrantesEntry;
-const entries = await getEntries("integrantes", sortByTitle) as IntegrantesEntry[];
+const entries = await getEntries("integrantes", sortByOrder) as IntegrantesEntry[];
 ---
 
 <CollectionLayout integranteIndex={authorIndex} entries={entries} />

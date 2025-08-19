@@ -43,6 +43,7 @@ const integrantes = defineCollection({
     searchable.extend({
       email: z.string().optional(),
       image: image().optional(),
+      order: z.number().default(9999),
       imageAlt: z.string().default(""),
       social: social.optional(),
     }),
