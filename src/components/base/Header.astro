@@ -81,11 +81,11 @@ const menu = [
   {
     name:"Nuestro Trabajo",
     url:"/nuestro-trabajo"
-  },
+  }/* ,
   {
     name:"Estudios y Proyectos",
     url:"/estudios-proyectos"
-  } 
+  }  */
   // {
   //  name: "Sesiones",
   //  url: "/sesiones",
@@ -152,9 +152,15 @@ const menu = [
             <a
               href={item.url}
               class={`block p-2 font-secondary font-semibold text-txt-p transition dark:text-darkmode-txt-p lg:px-2 lg:py-3 ${
-                (pathname === `${item.url}/` || pathname === item.url) &&
-                "active"
+                pathname === item.url || pathname.startsWith(item.url + "/")
+                  ? "text-blue-600 dark:text-blue-400"
+                  : ""
               }`}
+              aria-current={
+                pathname === item.url || pathname.startsWith(item.url + "/")
+                  ? "page"
+                  : undefined
+              }
             >
               {item.name}
             </a>
@@ -165,10 +171,13 @@ const menu = [
                     <a
                       href={subItem.url}
                       class={`block rounded p-2 text-sm font-secondary text-txt-p transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 ${
-                        (pathname === `${subItem.url}/` ||
-                          pathname === subItem.url) &&
-                        "active"
+                        pathname === subItem.url
+                          ? "text-blue-600 dark:text-blue-400"
+                          : ""
                       }`}
+                      aria-current={
+                        pathname === subItem.url ? "page" : undefined
+                      }
                     >
                       {subItem.name}
                     </a>
@@ -194,10 +203,11 @@ const menu = [
 </header>
 
 <style>
-  .active {
-    @apply text-blue-600 dark:text-blue-400;
-  }
   #nav-menu:has(input#nav-toggle:checked) {
     @apply block;
   }
 </style>
+
+<script is:inline>
+  // Eliminado: ya no es necesario el script JS para marcar el activo
+</script>

@@ -6,4 +6,4 @@ social:
   email: "contactocpctlaxcala@gmail.com"
 ---
 
-Integrante
+Presidente
