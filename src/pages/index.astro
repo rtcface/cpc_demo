@@ -1,26 +1,23 @@
 ---
 import BaseLayout from "@/components/base/BaseLayout.astro";
+import ChatAcces from "@components/chat/ChatAcces.astro";
 import HeaderLogos from "@components/common/HeaderLogos.astro";
 import HomeTeam from "@components/home-integrantes/HomeTeam.astro";
 import Actividades from "@components/home/Actividades.astro";
-
-
-
-
-
 ---
 
 <BaseLayout>
   <section class="container mx-auto px-4 py-16">
-    <HeaderLogos/>
-    <HomeTeam/>
+    <HeaderLogos />
+    <HomeTeam />
   </section>
   <section class="container mx-auto px-4 py-16">
     <div class="row justify-center">
-      <div class="glass rounded-lg text- p-8 md:col-10 lg:col-11 intersect:animate-fadeUp opacity-0 intersect-no-queue ">
-        <Actividades/>
+      <div
+        class="glass rounded-lg text- p-8 md:col-10 lg:col-11 intersect:animate-fadeUp opacity-0 intersect-no-queue"
+      >
+        <Actividades />
       </div>
-    </div>  
+    </div>
   </section>
 </BaseLayout>
-

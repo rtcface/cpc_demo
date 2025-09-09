@@ -1,0 +1,295 @@
+---
+import CloseIcon from "./icons/CloseIcon.astro";
+const { botName = "CPC Bot", welcomeMessage: incomingWelcome } = Astro.props;
+const welcomeMessage =
+  incomingWelcome ?? `¡Hola! Soy ${botName}. ¿En qué puedo ayudarte hoy?`;
+---
+
+<div
+  id="chat-container"
+  transition:persist
+  class="container glass py-2 z-30 h-full w-full lg:rounded-lg flex flex-col"
+  data-bot-name={botName}
+  data-welcome-text={welcomeMessage}
+>
+  <!-- Header of chat box -->
+  <div
+    class="flex items-center justify-between mb-3 border-b border-gray-200 pt-2 dark:border-gray-700"
+  >
+    <h4 class="text-txt-p dark:text-darkmode-txt-p">Chat • {botName}</h4>
+    <button
+      id="chat-close-btn"
+      class="text-txt-p dark:text-darkmode-txt-p"
+      aria-label="Cerrar chat"
+    >
+      <CloseIcon />
+    </button>
+  </div>
+  <!-- Body chatbox here show history message -->
+  <div
+    id="chat-log"
+    class="space-y-3 flex-1 overflow-y-auto pr-1"
+    aria-live="polite"
+    role="log"
+  >
+    <div class="flex items-start gap-3">
+      <div
+        class="h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0"
+        aria-hidden="true"
+      >
+        🤖
+      </div>
+      <div
+        class="max-w-[80%] rounded-lg px-3 py-2 bg-gray-100 dark:bg-cyan-950 text-txt-p dark:text-darkmode-txt-p shadow"
+      >
+        <p class="text-sm">
+          <span class="font-semibold">{botName}:</span>
+          {welcomeMessage}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- footer in this part contain input and button sende message  -->
+  <div class="border-t border-gray-200 dark:border-gray-700 pt-2">
+    <div class="flex items-center gap-2">
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="Escribe tu mensaje..."
+        class="flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm text-txt-p dark:text-darkmode-txt-p focus:outline-none focus:ring-2 focus:ring-cyan-500"
+        aria-label="Mensaje de chat"
+      />
+      <button
+        id="chat-send-btn"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-md bg-cyan-600 px-3 py-2 text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+        aria-label="Enviar mensaje"
+      >
+        Enviar
+      </button>
+    </div>
+  </div>
+  <script>
+    /* @ts-nocheck */
+    function setupChatUI() {
+      const container = document.getElementById("chat-container");
+      if (!container || container.dataset.setupDone === "true") return;
+      const log = document.getElementById("chat-log");
+      const inputEl = document.getElementById("chat-input");
+      const sendBtn = document.getElementById("chat-send-btn");
+      const closeBtn = document.getElementById("chat-close-btn");
+      if (!(log instanceof HTMLDivElement)) return;
+      if (!(inputEl instanceof HTMLInputElement)) return;
+      if (!(sendBtn instanceof HTMLButtonElement)) return;
+      if (!(closeBtn instanceof HTMLButtonElement)) return;
+      const logEl = log;
+      const input = inputEl;
+      const sendBtnEl = sendBtn;
+      const closeBtnEl = closeBtn;
+      container.dataset.setupDone = "true";
+      const botName = container.dataset.botName || "Bot";
+      const welcomeText = container.dataset.welcomeText || "";
+      const STORAGE_KEY = "chat:messages";
+      const MAX_HISTORY = 150;
+
+      function scrollToBottom() {
+        requestAnimationFrame(() => {
+          logEl.scrollTop = logEl.scrollHeight;
+        });
+      }
+
+      function getMessages() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          if (!Array.isArray(arr)) return [];
+          return arr.length > MAX_HISTORY ? arr.slice(-MAX_HISTORY) : arr;
+        } catch (_) {
+          return [];
+        }
+      }
+
+      // Initialize from storage
+      const init = getMessages();
+      if (init.length) {
+        // Clear static welcome and render stored messages
+        while (logEl.firstChild) logEl.removeChild(logEl.firstChild);
+        for (let i = 0; i < init.length; i++) {
+          const msg = init[i];
+          if (!msg || typeof msg.text !== "string") continue;
+          if (msg.isBot) {
+            const botRow = document.createElement("div");
+            botRow.className = "flex items-start gap-3";
+            const botAvatar = document.createElement("div");
+            botAvatar.setAttribute("aria-hidden", "true");
+            botAvatar.className =
+              "h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0";
+            botAvatar.textContent = "🤖";
+            const botBubble = document.createElement("div");
+            botBubble.className =
+              "max-w-[80%] rounded-lg px-3 py-2 bg-gray-100 dark:bg-cyan-950 text-txt-p dark:text-darkmode-txt-p shadow";
+            const botP = document.createElement("p");
+            botP.className = "text-sm";
+            const botStrong = document.createElement("span");
+            botStrong.className = "font-semibold";
+            botStrong.textContent = botName + ":";
+            botP.appendChild(botStrong);
+            botP.appendChild(document.createTextNode(" " + msg.text));
+            botBubble.appendChild(botP);
+            botRow.appendChild(botAvatar);
+            botRow.appendChild(botBubble);
+            logEl.appendChild(botRow);
+          } else {
+            const userRow = document.createElement("div");
+            userRow.className = "flex items-start gap-3 justify-end";
+            const userBubble = document.createElement("div");
+            userBubble.className =
+              "max-w-[80%] rounded-lg px-3 py-2 bg-cyan-600 text-white shadow";
+            const userP = document.createElement("p");
+            userP.className = "text-sm";
+            const userStrong = document.createElement("span");
+            userStrong.className = "font-semibold";
+            userStrong.textContent = "Tú:";
+            userP.appendChild(userStrong);
+            userP.appendChild(document.createTextNode(" " + msg.text));
+            userBubble.appendChild(userP);
+            const userAvatar = document.createElement("div");
+            userAvatar.setAttribute("aria-hidden", "true");
+            userAvatar.className =
+              "h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0";
+            userAvatar.textContent = "👤";
+            userRow.appendChild(userBubble);
+            userRow.appendChild(userAvatar);
+            logEl.appendChild(userRow);
+          }
+        }
+        scrollToBottom();
+      }
+
+      function sendMessage() {
+        const value = (input.value || "").trim();
+        if (!value) return;
+        // Append user bubble
+        const userRow = document.createElement("div");
+        userRow.className = "flex items-start gap-3 justify-end";
+        const userBubble = document.createElement("div");
+        userBubble.className =
+          "max-w-[80%] rounded-lg px-3 py-2 bg-cyan-600 text-white shadow";
+        const userP = document.createElement("p");
+        userP.className = "text-sm";
+        const userStrong = document.createElement("span");
+        userStrong.className = "font-semibold";
+        userStrong.textContent = "Tú:";
+        userP.appendChild(userStrong);
+        userP.appendChild(document.createTextNode(" " + value));
+        userBubble.appendChild(userP);
+        const userAvatar = document.createElement("div");
+        userAvatar.setAttribute("aria-hidden", "true");
+        userAvatar.className =
+          "h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0";
+        userAvatar.textContent = "👤";
+        userRow.appendChild(userBubble);
+        userRow.appendChild(userAvatar);
+        logEl.appendChild(userRow);
+        // Persist user message (trim to MAX_HISTORY)
+        (function () {
+          const arr = getMessages();
+          arr.push({ isBot: false, text: value });
+          if (arr.length > MAX_HISTORY) arr.splice(0, arr.length - MAX_HISTORY);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+          } catch (_) {}
+        })();
+        input.value = "";
+        scrollToBottom();
+        setTimeout(() => {
+          // Append bot reply
+          const botRow = document.createElement("div");
+          botRow.className = "flex items-start gap-3";
+          const botAvatar = document.createElement("div");
+          botAvatar.setAttribute("aria-hidden", "true");
+          botAvatar.className =
+            "h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0";
+          botAvatar.textContent = "🤖";
+          const botBubble = document.createElement("div");
+          botBubble.className =
+            "max-w-[80%] rounded-lg px-3 py-2 bg-gray-100 dark:bg-cyan-950 text-txt-p dark:text-darkmode-txt-p shadow";
+          const botP = document.createElement("p");
+          botP.className = "text-sm";
+          const botStrong = document.createElement("span");
+          botStrong.className = "font-semibold";
+          botStrong.textContent = botName + ":";
+          botP.appendChild(botStrong);
+          const reply = "En breve estará operando.";
+          botP.appendChild(document.createTextNode(" " + reply));
+          botBubble.appendChild(botP);
+          botRow.appendChild(botAvatar);
+          botRow.appendChild(botBubble);
+          logEl.appendChild(botRow);
+          // Persist bot message (trim to MAX_HISTORY)
+          (function () {
+            const arr = getMessages();
+            arr.push({ isBot: true, text: reply });
+            if (arr.length > MAX_HISTORY)
+              arr.splice(0, arr.length - MAX_HISTORY);
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+            } catch (_) {}
+          })();
+          scrollToBottom();
+        }, 300);
+      }
+
+      sendBtnEl.onclick = sendMessage;
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+
+      // Confirm clear on close
+      closeBtnEl.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        const confirmed = confirm(
+          "Al cerrar el chat se perderá el historial. ¿Deseas continuar?"
+        );
+        if (!confirmed) return;
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+        } catch (_) {}
+        while (logEl.firstChild) logEl.removeChild(logEl.firstChild);
+        if (welcomeText) {
+          // Re-add welcome bubble
+          const botRow = document.createElement("div");
+          botRow.className = "flex items-start gap-3";
+          const botAvatar = document.createElement("div");
+          botAvatar.setAttribute("aria-hidden", "true");
+          botAvatar.className =
+            "h-8 w-8 flex items-center justify-center rounded-full bg-cyan-600 text-white shrink-0";
+          botAvatar.textContent = "🤖";
+          const botBubble = document.createElement("div");
+          botBubble.className =
+            "max-w-[80%] rounded-lg px-3 py-2 bg-gray-100 dark:bg-cyan-950 text-txt-p dark:text-darkmode-txt-p shadow";
+          const botP = document.createElement("p");
+          botP.className = "text-sm";
+          const botStrong = document.createElement("span");
+          botStrong.className = "font-semibold";
+          botStrong.textContent = botName + ":";
+          botP.appendChild(botStrong);
+          botP.appendChild(document.createTextNode(" " + welcomeText));
+          botBubble.appendChild(botP);
+          botRow.appendChild(botAvatar);
+          botRow.appendChild(botBubble);
+          logEl.appendChild(botRow);
+        }
+        document.dispatchEvent(new CustomEvent("chat:request-close"));
+      });
+
+      scrollToBottom();
+    }
+    document.addEventListener("DOMContentLoaded", setupChatUI);
+    document.addEventListener("astro:after-swap", setupChatUI);
+  </script>
+</div>

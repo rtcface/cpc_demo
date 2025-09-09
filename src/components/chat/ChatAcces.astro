@@ -1,0 +1,21 @@
+---
+import ChatIcon from "./icons/ChatIcon.astro";
+---
+
+<div
+  transition:persist
+  class="container glass py-2 z-30 mb-4 lg:mt-4 lg:rounded-lg sticky top-0 w-2/3 mx-auto hover:bg-gray-100 dark:hover:bg-cyan-950 rounded-lg p-2 cursor-pointer transition-all duration-300 hover:scale-105"
+>
+  <div class="flex items-center justify-between">
+    <button
+      id="chat-open-btn"
+      class="flex items-center rounded-lg p-2"
+      aria-label="Abrir chat"
+    >
+      <ChatIcon class="w-16 h-16" />
+      <span class="text-txt-p dark:text-darkmode-txt-p">
+        Hola, ¿en qué te podemos ayudar?</span
+      >
+    </button>
+  </div>
+</div>

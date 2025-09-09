@@ -7,6 +7,9 @@ import "@/styles/main.scss";
 import { ClientRouter } from "astro:transitions";
 import Background from "@/components/base/Background.astro";
 import { Tooltips } from "astro-tooltips";
+//import ChatAcces from "@components/chat/ChatAcces.astro";
+import ChatForm from "@components/chat/ChatForm.astro";
+import ChatAcces from "@components/chat/ChatAcces.astro";
 
 // types for frontmatters
 export interface Props {
@@ -134,11 +137,10 @@ const baseUrl = "https://cpc.saetlax.org/";
     <script>
       import { initFlowbite } from "flowbite";
       initFlowbite();
-      document.addEventListener('astro:after-swap', function () {
+      document.addEventListener("astro:after-swap", function () {
         initFlowbite();
-      })
+      });
     </script>
-    
   </head>
   <body>
     <Background />
@@ -146,6 +148,68 @@ const baseUrl = "https://cpc.saetlax.org/";
     <main id="main-content" class="flex-1">
       <slot />
     </main>
+    <!-- Chat components: access button and chat form -->
+    <section
+      id="chat-form-section"
+      transition:persist="chat-form"
+      class="fixed top-20 right-4 bottom-4 z-50 w-full max-w-md lg:max-w-lg hidden"
+    >
+      <ChatForm
+        botName="CPC Asistente"
+        welcomeMessage="¡Bienvenido! ¿Cómo puedo ayudarte?"
+      />
+    </section>
+    <section
+      id="chat-access-section"
+      transition:persist="chat-access"
+      class="fixed bottom-4 right-4 w-auto z-50"
+    >
+      <ChatAcces />
+    </section>
+
+    <script>
+      function updateChatVisibility(isOpen = false) {
+        const formSection = document.getElementById("chat-form-section");
+        const accessSection = document.getElementById("chat-access-section");
+        if (!formSection || !accessSection) return;
+        if (isOpen) {
+          formSection.classList.remove("hidden");
+          accessSection.classList.add("hidden");
+        } else {
+          formSection.classList.add("hidden");
+          accessSection.classList.remove("hidden");
+        }
+      }
+
+      function wireChatToggles() {
+        const openBtn = document.getElementById("chat-open-btn");
+        const closeBtn = document.getElementById("chat-close-btn");
+        // Restore last state (default: closed)
+        const isOpen = localStorage.getItem("chat:isOpen") === "true";
+        updateChatVisibility(isOpen);
+
+        if (openBtn) {
+          openBtn.onclick = () => {
+            localStorage.setItem("chat:isOpen", "true");
+            updateChatVisibility(true);
+          };
+        }
+        if (closeBtn) {
+          closeBtn.onclick = () => {
+            localStorage.setItem("chat:isOpen", "false");
+            updateChatVisibility(false);
+          };
+        }
+      }
+      document.addEventListener("DOMContentLoaded", wireChatToggles);
+      document.addEventListener("astro:after-swap", wireChatToggles);
+
+      // Allow components to request closing the chat (e.g., after confirming data loss)
+      document.addEventListener("chat:request-close", () => {
+        localStorage.setItem("chat:isOpen", "false");
+        updateChatVisibility(false);
+      });
+    </script>
     <Footer />
     <!-- <ObserverScript /> -->
   </body>
