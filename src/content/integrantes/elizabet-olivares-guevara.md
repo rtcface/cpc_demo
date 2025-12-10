@@ -1,6 +1,6 @@
 ---
 title: Dra. Elizabeth Olivares Guevara
-order: 3
+order: 5
 email: janedoe@email.com
 image: "@assets/images/team/elizabeth-olivares.jpg"
 social:
