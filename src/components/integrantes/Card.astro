@@ -19,14 +19,16 @@ const bodyBrief = entry.body ? plainify(entry.body?.slice(0, 100)) : null;
   >
     {
       image && (
-        <Image
-          class="mx-auto mb-6 rounded"
-          src={image}
-          alt={imageAlt}
-          width={120}
-          height={120}
-          loading="eager"
-        />
+        <div class="mx-auto mb-6 aspect-[3/4] w-full overflow-hidden rounded">
+          <Image
+            class="h-full w-full object-cover object-center"
+            src={image}
+            alt={imageAlt}
+            width={400}
+            height={533}
+            loading="eager"
+          />
+        </div>
       )
     }
     <h4 class="mb-3">
