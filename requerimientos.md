@@ -59,6 +59,21 @@ Este documento contiene las historias de usuario y criterios de aceptación reda
 
 ---
 
+## Característica: Automatización de "Actividades Relevantes"
+
+**Como** administrador del contenido
+**Quiero** vincular la sección de actividades con la página oficial de Facebook
+**Para** optimizar el tiempo de actualización y asegurar que las publicaciones recientes se muestren automáticamente.
+
+### Escenario: Sincronización dinámica de publicaciones
+
+**Dado** que existen nuevas publicaciones en la cuenta oficial de Facebook del CPC
+**Cuando** un ciudadano visita la sección "Actividades Relevantes" en la página de Inicio
+**Entonces** el sistema debe mostrar un feed o tarjetas dinámicas con las publicaciones más recientes de Facebook
+**Y** cada actividad debe incluir el enlace directo a la publicación original para fomentar la interacción social.
+
+---
+
 ## Característica: Reubicación de Perfiles de Integrantes
 
 **Como** desarrollador

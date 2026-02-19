@@ -25,7 +25,10 @@ fontSecondary = fontSecondary
 
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}","./node_modules/flowbite/**/*.js"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   safelist: [],
   darkMode: "class",
   theme: {
@@ -42,6 +45,15 @@ module.exports = {
     },
     extend: {
       colors: {
+        cpc: {
+          navy: {
+            DEFAULT: "#1E3A5F",
+            light: "#2E4A6F",
+            dark: "#0F1F33",
+          },
+          blue: "#39A2DB",
+          gold: "#F39C12",
+        },
         txt: {
           p: "#000",
           s: "#222",
@@ -167,7 +179,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
+    require("flowbite/plugin"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwind-bootstrap-grid")({

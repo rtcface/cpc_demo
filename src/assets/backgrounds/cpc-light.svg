@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f4f8"/>
+      <stop offset="50%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.25"/>
+    </linearGradient>
+    
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A5F" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#39A2DB" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#1E3A5F" stop-opacity="0.08"/>
+    </linearGradient>
+    
+    <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.15"/>
+    </linearGradient>
+    
+    <filter id="softBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+    </filter>
+    
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="3840" height="2160" fill="url(#bgGradient)"/>
+  
+  <g filter="url(#softBlur)" opacity="0.8">
+    <path fill="url(#wave1)" d="M0,800 C960,600 1920,1100 2880,700 C3360,500 3840,900 3840,900 L3840,2160 L0,2160 Z"/>
+  </g>
+  
+  <g filter="url(#softBlur)" opacity="0.6">
+    <path fill="url(#wave2)" d="M0,1000 C800,750 1600,1300 2400,850 C3000,550 3840,1050 3840,1050 L3840,2160 L0,2160 Z"/>
+  </g>
+  
+  <g filter="url(#softBlur)" opacity="0.5">
+    <path fill="url(#wave3)" d="M0,1200 C1200,900 1920,1500 2880,1000 C3500,700 3840,1200 3840,1200 L3840,2160 L0,2160 Z"/>
+  </g>
+  
+  <g filter="url(#softBlur)" opacity="0.4">
+    <path fill="url(#wave2)" d="M0,1500 C600,1250 1400,1800 2200,1300 C2900,900 3840,1450 3840,1450 L3840,2160 L0,2160 Z"/>
+  </g>
+</svg>
