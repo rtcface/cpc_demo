@@ -1,0 +1,62 @@
+---
+interface Props {
+  href?: string;
+}
+
+const { 
+  href = "https://www.facebook.com/CPCTlaxcala"
+} = Astro.props;
+---
+
+<div id="facebook-plugin-container" class="w-full flex justify-center p-4">
+  <div 
+    class="fb-page" 
+    data-href={href}
+    data-tabs="timeline"
+    data-height="700"
+    data-small-header="false"
+    data-adapt-container-width="true"
+    data-hide-cover="false"
+    data-show-facepile="true"
+  >
+  </div>
+</div>
+
+<div id="fb-root"></div>
+
+<script is:inline async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0"></script>
+
+<script is:inline>
+  function loadFacebookPlugin() {
+    const container = document.getElementById('facebook-plugin-container');
+    const fbPage = container?.querySelector('.fb-page');
+    
+    if (container && fbPage) {
+      const containerWidth = container.offsetWidth;
+      const newWidth = Math.min(Math.max(containerWidth - 32, 280), 500);
+      fbPage.setAttribute('data-width', newWidth.toString());
+    }
+    
+    if (window.FB) {
+      window.FB.XFBML.parse();
+    }
+  }
+
+  function initFacebook() {
+    if (window.FB) {
+      window.FB.init({
+        xfbml: true,
+        version: 'v18.0'
+      });
+      window.FB.XFBML.parse();
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    setTimeout(loadFacebookPlugin, 100);
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(loadFacebookPlugin, 100);
+  });
+  window.addEventListener('resize', loadFacebookPlugin);
+</script>

@@ -1,67 +1,13 @@
 ---
 import PageHeader from "@components/common/PageHeader.astro";
-import Slider, { type ImageItem } from '@components/common/Slider.astro'
-
-// Import images from assets
-import diasNaranja from '@assets/images/acciones-relevantes/25_dias_naranja.png';
-import convocatoriaABC from '@assets/images/acciones-relevantes/convocatoria_nueva_ABC.png';
-import cursoDibujo from '@assets/images/acciones-relevantes/Curso_Dibujo_infantil.png';
-import ganadores from '@assets/images/acciones-relevantes/Ganadores.png';
-import intercambio from '@assets/images/acciones-relevantes/intercambio.png';
-import mejoraRegulatoria from '@assets/images/acciones-relevantes/mejora_regulatoria.png';
-import perspectivaGenero from '@assets/images/acciones-relevantes/Perspectiva_genero.png';
-import semanaIntegridad from '@assets/images/acciones-relevantes/semana_integridad.png';
-import transformacion from '@assets/images/acciones-relevantes/transformacion.png';
-import valoresEticos from '@assets/images/acciones-relevantes/valores_eticos.png';
-
-const images: ImageItem[] = [
-  {
-    src: diasNaranja,
-    alt: "25 días naranja"
-  },
-  {
-    src: convocatoriaABC,
-    alt: "Convocatoria nueva ABC"
-  },
-  {
-    src: cursoDibujo,
-    alt: "Curso de dibujo infantil"
-  },
-  {
-    src: ganadores,
-    alt: "Ganadores"
-  },
-  {
-    src: intercambio,
-    alt: "Intercambio"
-  },
-  {
-    src: mejoraRegulatoria,
-    alt: "Mejora regulatoria"
-  },
-  {
-    src: perspectivaGenero,
-    alt: "Perspectiva de género"
-  },
-  {
-    src: semanaIntegridad,
-    alt: "Semana de integridad"
-  },
-  {
-    src: transformacion,
-    alt: "Transformación"
-  },
-  {
-    src: valoresEticos,
-    alt: "Valores éticos"
-  }
-];
-
+import FacebookPagePlugin from "@components/common/FacebookPagePlugin.astro";
 ---
 
-<PageHeader title="Actividades Relevantes"/>
-<Slider images={images}/>
-
-
-
-
+<section class="w-full">
+  <PageHeader title="Actividades Relevantes"/>
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+      <FacebookPagePlugin />
+    </div>
+  </div>
+</section>
