@@ -1,41 +1,25 @@
 ---
-title: "Funciones del CPC"
+title: "Relevancia  del CPC"
 description: "Conoce las funciones y responsabilidades legales del Comité de Participación Ciudadana"
 draft: false
 ---
 
-Participamos en la Comisión Ejecutiva en los términos que establece la ley del Sistema Anticorrupción del Estado de Tlaxcala;
+1) __Voz de la sociedad civil.__  
+El CPC está integrado por ciudadanos con experiencia y prestigio en temas de transparencia, rendición de cuentas y combate a la corrupción. Esto asegura que las decisiones y políticas públicas del Sistema Anticorrupción del Estado de Tlaxcala  no se tomen exclusivamente desde el gobierno, sino también con participación de la ciudadanía.
 
-Accedemos sin ninguna restricción, por conducto de la o el secretario técnico a la información que genere el Sistema Estatal;
+2) __Propuestas de política pública.__  
+Tiene la facultad de proponer políticas públicas y mecanismos para prevenir, detectar y sancionar la corrupción, basándose en estudios técnicos y experiencias ciudadanas.
 
-Opinamos y realizamos propuestas, a través de su participación en la Comisión Ejecutiva, sobre las políticas integrales en la materia;
+3) __Transparencia y legitimidad.__  
+Al ser un órgano ciudadano, aporta legitimidad y credibilidad al sistema anticorrupción. Su presencia ayuda a generar confianza en que el combate a la corrupción no será sólo un discurso político, sino una acción real, supervisada y evaluada por la sociedad.
 
-Proponemos al Comité Coordinador, a través de su participación en la Comisión Ejecutiva, para su consideración;
+4) __Vinculación con la sociedad.__  
+Funciona como un puente entre la ciudadanía y las instituciones públicas, canalizando propuestas y preocupaciones ciudadanas hacia las autoridades competentes.
 
-α) Proyectos de bases de coordinación interinstitucional e intergubernamental en las materias de fiscalización y control de recursos públicos, de prevención, control y disuasión de faltas administrativas y hechos de corrupción, en especial sobre las causas que los generan;
+5) __Participación en el Comité Coordinador.__  
+El CPC preside el Comité Coordinador del Sistema Anticorrupción del Estado de Tlaxcala, que es el órgano central del sistema. Esto le da una posición privilegiada para coordinar acciones, impulsar investigaciones y dar seguimiento a los trabajos del Sistema Anticorrupción del Estado de Tlaxcala..
 
-b) Proyectos de mejora a los instrumentos, lineamientos y mecanismos para el suministro, intercambio, sistematización y actualización de la información que generen eren las instituciones estatales y municipales competentes en las materias reguladas por esta Ley, y
+6) __Impulso de la cultura de la legalidad.__  
+A través de campañas, foros, talleres y colaboraciones con organizaciones civiles, el CPC promueve una cultura de integridad, legalidad y ética pública.
 
-c) Proyectos de mejora a los instrumentos, lineamientos y mecanismos requeridos para la operación del sistema electrónico de denuncia y queja.
-
-Opinamos sobre el programa anual de trabajo del Comité Coordinador;
-
-Realizamos observaciones, a través de su participación en la Comisión Ejecutiva, a los proyectos de informe anual del Comité Coordinador;
-
-Proponemos al Comité Coordinador, a través de su participación en la Comisión Ejecutiva, la emisión de recomendaciones no vinculantes;
-
-Promovemos la colaboración con instituciones en la materia, con el propósito de elaborar investigaciones sobre las políticas públicas para la prevención, detección y combate de hechos de corrupción o faltas administrativas;
-
-Damos seguimiento al funcionamiento del Sistema Estatal, y
-
-Proponemos al Comité Coordinador mecanismos para facilitar el funcionamiento de las instancias de contraloría social, así como para recibir directamente información generada por esas instancias y formas de participación ciudadana.
-
-Proponemos al Comité Coordinador, a través de su participación en la Comisión Ejecutiva, mecanismos para que la sociedad participe en la prevención y denuncia de faltas administrativas y hechos de corrupción;
-
-Llevamos un registro voluntario de las organizaciones de la Sociedad Civil que deseen colaborar de manera coordinada con el Comité de Participación Ciudadana para establecer una red de participación ciudadana, conforme a sus normas de carácter interno;
-
-Opinamos o proponemos, a través de su participación en la Comisión Ejecutiva, indicadores y metodologías para la medición y seguimiento del fenómeno de la corrupción, así como para la evaluación del cumplimiento de los objetivos y metas de las políticas estatales en la materia y los programas y acciones que implementen las autoridades que conforman el Sistema Estatal;
-
-Proponemos mecanismos de articulación entre organizaciones de la Sociedad Civil, la academia y grupos ciudadanos;
-
-Proponemos reglas y procedimientos mediante los cuales se recibirán las peticiones, solicitudes y denuncias fundadas y motivadas que la Sociedad Civil pretenda hacer llegar al órgano de Fiscalización Superior;
+El Comité de Participación Ciudadana es el pilar ciudadano del Sistema Anticorrupción del Estado de Tlaxcala. Sin su presencia, el Sistema Anticorrupción perdería su carácter plural, independiente y participativo. Su labor permite que el combate a la corrupción sea más transparente, efectivo y cercano a la gente.

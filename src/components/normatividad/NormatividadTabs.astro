@@ -1,0 +1,254 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import { FaFilePdf, FaGlobeAmericas, FaBuilding, FaGavel, FaUniversity } from "react-icons/fa";
+---
+
+<BaseLayout title="Normatividad" description="Marco Normativo del CPC">
+  <PageHeader title="Normatividad" />
+
+  <section class="section-sm">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="md:col-10 lg:col-12">
+        <div class="glass rounded-lg p-6">
+          <div class="flex flex-wrap justify-center gap-2 mb-6" id="normatividad-tabs">
+            <button 
+              class="tab-btn active px-4 py-2 rounded-lg font-medium transition-all duration-300 bg-blue-600 text-white"
+              data-tab="internacional"
+            >
+              <FaGlobeAmericas className="inline-block mr-2" />
+              Internacional
+            </button>
+            <button 
+              class="tab-btn px-4 py-2 rounded-lg font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+              data-tab="nacional"
+            >
+              <FaGavel className="inline-block mr-2" />
+              Nacional
+            </button>
+            <button 
+              class="tab-btn px-4 py-2 rounded-lg font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+              data-tab="estatal"
+            >
+              <FaBuilding className="inline-block mr-2" />
+              Estatal
+            </button>
+            <button 
+              class="tab-btn px-4 py-2 rounded-lg font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+              data-tab="interno"
+            >
+              <FaUniversity className="inline-block mr-2" />
+              Interno
+            </button>
+          </div>
+
+          <!-- Contenido Internacional -->
+          <div class="tab-content active" id="internacional">
+            <ul class="space-y-3">
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/10/Convencion-de-las-Naciones-Unidas-contra-la-Corrupcion.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Convención de las Naciones Unidas Contra la Corrupción</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/10/Convencion-Interamericana-contra-la-Corrupcion.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Convención Interamericana Contra la Corrupción</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/10/Convencion-para-Combatir-el-Cohecho-de-Servidores-Publicos-Extranjeros-en-Transacciones-Comerciales-Internacionales.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Convención para Combatir el Cohecho de Servidores Públicos Extranjeros</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/10/Convencion-Americana-de-Derechos-Humanos.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Convención Americana de Derechos Humanos</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/11/Pacto-Internacional-de-Derechos-Economicos-Sociales-y-Culturales.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Pacto Internacional de Derechos Económicos Sociales y Culturales</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/11/Pacto-Internacional-de-Derechos-Civiles-y-Politicos.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Pacto Internacional de Derechos Civiles y Políticos</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/11/Convencion-Sobre-la-Eliminacion-de-todas-las-formas-de-discriminacion-contra-la-mujer.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Convención sobre la Eliminación de todas las formas contra la Mujer (CEDAW)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contenido Nacional -->
+          <div class="tab-content hidden" id="nacional">
+            <ul class="space-y-3">
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Constitución Política de los Estados Unidos Mexicanos</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGSNA_200521.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley General del Sistema Nacional Anticorrupción</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGRA.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley General de Responsabilidades Administrativas</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGTAIP.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley General de Transparencia y Acceso a la Información Pública</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley General de Protección de Datos Personales</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFRCF_200521.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley de Fiscalización y Rendición de Cuentas de la Federación</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGA.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley General de Archivos</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Código Nacional de Procedimientos Penales</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2023/10/Politica-Anticorrupcion-del-Estado-de-Tlaxcala.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Política Nacional Anticorrupción</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contenido Estatal -->
+          <div class="tab-content hidden" id="estatal">
+            <ul class="space-y-3">
+              <li>
+                <a href="https://congresodetlaxcala.gob.mx/archivo/leyes2020/pdf/5_constitucion_pol.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Constitución Política del Estado Libre y Soberano de Tlaxcala</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://congresodetlaxcala.gob.mx/archivo/leyes2020/pdf/96_Ley_del_sistema.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley del Sistema Anticorrupción del Estado de Tlaxcala</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2025/04/LTETLX-U-R-16-08-2024.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley de Transparencia y Acceso a la Información Pública para el Estado de Tlaxcala</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://congresodetlaxcala.gob.mx/archivo/leyes2020/pdf/69_Ley_de_protecci.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley de Protección de Datos Personales del Estado de Tlaxcala</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://congresodetlaxcala.gob.mx/archivo/leyes2020/pdf/41_Ley_de_fiscaliz.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley de Fiscalización Superior y Rendición de Cuentas del Estado de Tlaxcala</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://congresodetlaxcala.gob.mx/archivo/leyes2020/pdf/7_Ley_de_adquisici.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Ley de Adquisiciones, Arrendamientos y Servicios del Estado de Tlaxcala</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contenido Interno -->
+          <div class="tab-content hidden" id="interno">
+            <ul class="space-y-3">
+              <li>
+                <a href="https://saetlax.org/wp-content/uploads/2021/04/Reglamento-Interno-del-Comite-de-Participacion-Ciudadana.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <FaFilePdf className="text-red-600 text-xl flex-shrink-0" />
+                  <span class="text-gray-700 dark:text-gray-300">Reglamento Interno del Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>
+
+<style>
+  .tab-content.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', initTabs);
+  document.addEventListener('DOMContentLoaded', initTabs);
+
+  function initTabs() {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+        if (!targetId) return;
+
+        tabs.forEach(t => {
+          t.classList.remove('bg-blue-600', 'text-white');
+          t.classList.add('bg-gray-200', 'dark:bg-gray-700');
+        });
+
+        tab.classList.add('bg-blue-600', 'text-white');
+        tab.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+
+        contents.forEach(content => {
+          content.classList.add('hidden');
+          content.classList.remove('active');
+        });
+
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.remove('hidden');
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
+</script>

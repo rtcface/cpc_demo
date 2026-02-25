@@ -1,9 +1,13 @@
 ---
 title: "¿Qué NO hace el CPC?"
-description: "Conoce las limitaciones y alcances del Comité de Participación Ciudadana"
+description: "Marco de actuación y alcances institucionales del Comité de Participación Ciudadana"
 draft: false
 ---
 
-No metemos a malos funcionarios a la cárcel; pero si te brindamos orientación jurídica.
+Para un correcto acercamiento al Sistema Anticorrupción, es fundamental precisar que el **Comité de Participación Ciudadana (CPC)** es un órgano colegiado con facultades específicas de vinculación y propuesta, mas no es una autoridad sancionadora:
 
-No realizamos investigaciones, ni sancionamos; pero si te decimos a que Instituciones puedes acudir cuando conoces o eres víctima de un hecho de corrupción o falta administrativa.
+1) __Sobre la Impartición de Justicia.__  
+El CPC no tiene facultades para sancionar penalmente ni encarcelar a servidores públicos; sin embargo, **brindamos orientación jurídica** especializada para canalizar debidamente cualquier inquietud ciudadana ante las autoridades competentes.
+
+2) __Sobre la Investigación y Sanción Administrativa.__  
+El Comité no realiza investigaciones directas ni impone sanciones administrativas. No obstante, actuamos como un puente institucional para **indicarte qué instancias específicas deben intervenir** en caso de que seas víctima o tengas conocimiento de un hecho de corrupción o falta administrativa, garantizando que tu reporte llegue al destino adecuado.

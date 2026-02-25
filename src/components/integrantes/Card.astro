@@ -3,6 +3,7 @@ import type { IntegrantesEntry } from "@/types";
 import { plainify } from "@lib/textConverter";
 import { Image } from "astro:assets";
 import Social from "@components/common/Social.astro";
+import { FaFileAlt } from "react-icons/fa";
 
 interface Props {
   entry: IntegrantesEntry;
@@ -11,6 +12,15 @@ interface Props {
 const { entry }: Props = Astro.props;
 const { title, image, imageAlt, social } = entry.data;
 const bodyBrief = entry.body ? plainify(entry.body?.slice(0, 100)) : null;
+
+const curriculumUrl = (() => {
+  const slug = entry.id.toLowerCase();
+  if (slug.includes('juan-carlos')) return '/curriculum/juan-cruz';
+  if (slug.includes('carlos-perez')) return '/curriculum/carlos-perez';
+  if (slug.includes('elizabeth')) return '/curriculum/elizabeth-olivares';
+  if (slug.includes('victor')) return '/curriculum/victor-flores';
+  return '/curriculum/pendiente-por-designar';
+})();
 ---
 
 <div class="mb-14 md:col-6 lg:col-4">
@@ -36,5 +46,14 @@ const bodyBrief = entry.body ? plainify(entry.body?.slice(0, 100)) : null;
     </h4>
     {bodyBrief && <p class="mb-4">{bodyBrief}</p>}
     <Social links={social} />
+    {curriculumUrl && (
+      <a 
+        href={curriculumUrl} 
+        class="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+      >
+        <FaFileAlt className="w-4 h-4" />
+        Ver Curriculum
+      </a>
+    )}
   </div>
 </div>

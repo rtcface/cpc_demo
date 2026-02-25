@@ -121,3 +121,38 @@ Este documento contiene las historias de usuario y criterios de aceptación reda
 **Dado** que el usuario busca los valores institucionales
 **Cuando** selecciona "Misión y Visión" desde el submenú de "Conócenos"
 **Entonces** el sistema debe mostrar los textos oficiales sobre prevención y fortalecimiento ético.
+
+---
+
+## Característica: Infografía Interactiva de Normatividad
+**Como** ciudadano o consultor legal
+**Quiero** visualizar el marco normativo mediante una infografía interactiva e institucional
+**Para** identificar y acceder rápidamente a los documentos legales organizados por jerarquía.
+
+### Escenario: Visualización de la infografía de normativa
+  [cite_start]**Dado** que el usuario accede a la ruta `/normatividad/` o selecciona "Normativa" en el menú principal [cite: 97, 98]
+  **Cuando** la página carga el contenido
+  [cite_start]**Entonces** el sistema debe mostrar una infografía interactiva basada en el diseño institucional (grid de tarjetas) 
+  **Y** la información debe estar categorizada en cuatro bloques principales:
+    * [cite_start]Marco Normativo Internacional [cite: 100]
+    * [cite_start]Marco Normativo Nacional [cite: 108]
+    * [cite_start]Marco Normativo Estatal [cite: 119]
+    * [cite_start]Marco Normativo Interno [cite: 126]
+
+### Escenario: Interacción con los elementos de la infografía
+  **Dado** que el usuario visualiza la infografía interactiva
+  [cite_start]**Cuando** el usuario hace clic o interactúa con una categoría específica (ej. Marco Normativo Estatal) [cite: 119]
+  **Entonces** el sistema debe desplegar de forma visual y atractiva el listado de leyes correspondientes:
+    * [cite_start]Constitución Política del Estado de Tlaxcala [cite: 120]
+    * [cite_start]Ley del Sistema Anticorrupción del Estado [cite: 121]
+    * [cite_start]Ley de Transparencia del Estado [cite: 122]
+    * (Y demás leyes del listado estatal) [cite_start][cite: 123-125]
+  [cite_start]**Y** cada elemento debe funcionar como un acceso directo (hipervínculo) al documento PDF oficial [cite: 120-125].
+
+### Escenario: Acceso a documentos internacionales e internos
+  **Dado** que el usuario requiere consultar tratados o reglamentos específicos
+  [cite_start]**Cuando** selecciona las categorías de "Internacional" o "Interno" [cite: 100, 126]
+  **Entonces** el sistema debe permitir la descarga o visualización de documentos clave como:
+    * [cite_start]Convención de las Naciones Unidas Contra la Corrupción [cite: 101]
+    * [cite_start]Pacto Internacional de Derechos Civiles y Políticos [cite: 106]
+    * [cite_start]Reglamento Interno del CPC [cite: 127, 128]

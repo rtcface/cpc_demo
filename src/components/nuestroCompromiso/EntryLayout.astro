@@ -4,6 +4,7 @@ import { markdownify } from "@lib/textConverter";
 
 import type { NuestroCompromisoEntry } from "@/types";
 import { render } from "astro:content";
+import PageHeader from "@components/common/PageHeader.astro";
 
 interface Props {
   entry: NuestroCompromisoEntry;
@@ -14,13 +15,17 @@ const { title, description } = entry.data;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={title} description={description} >
+<BaseLayout title={title} description={description}>
+  <PageHeader title={title} />
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">
-        <div class="glass rounded-lg text- p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue">
-            <h2 set:html={markdownify(title)} class="h3 mb-6" />
+        <div
+          class="glass rounded-lg text- p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue"
+        >
+          <div class="prose dark:prose-invert max-w-none">
             <Content />
+          </div>
         </div>
       </div>
     </div>
