@@ -184,3 +184,34 @@ Este documento contiene las historias de usuario y criterios de aceptación reda
   [cite_start]**Dado** que el contenido está agrupado por años [cite: 132]
   **Cuando** el usuario interactúa con un recuadro específico (ej. Informes) dentro de cualquier periodo
   **Entonces** la funcionalidad de visualización o descarga de documentos debe operar exactamente igual a la versión anterior, respetando la navegación actual.
+
+  ---
+
+## Característica: Asistente Virtual Inteligente "CPC Asistente"
+**Como** ciudadano que navega por el micrositio
+**Quiero** interactuar con un chat conversacional
+**Para** resolver mis dudas sobre el marco normativo, integrantes y funciones del CPC de forma rápida, clara y precisa.
+
+### Escenario: Activación y mensaje de bienvenida
+  **Dado** que el usuario hace clic en el widget del "CPC Asistente" en cualquier página del sitio
+  **Cuando** se despliega la interfaz del chat
+  **Entonces** el sistema ya no debe mostrar el aviso de "en construcción"
+  **Y** debe enviar un mensaje de bienvenida institucional (ej. "Hola, soy el Asistente del CPC Tlaxcala. ¿En qué te puedo ayudar hoy?")
+  **Y** debe mostrar opciones rápidas sugeridas como: "¿Qué hace el CPC?", "Normativa" o "Denuncias".
+
+### Escenario: Respuestas fundamentadas en el contenido oficial
+  **Dado** que el usuario realiza una pregunta sobre el comité (ej. "¿Cuáles son sus atribuciones?" o "¿Quiénes lo integran?")
+  **Cuando** el asistente procesa la solicitud
+  **Entonces** debe generar una respuesta en lenguaje ciudadano y claro, basada estrictamente en la información oficial del sitio
+  **Y** debe incluir al final de su respuesta un enlace directo a la sección correspondiente del micrositio para que el usuario pueda ampliar la información.
+
+### Escenario: Manejo de solicitudes fuera de competencia (Limitaciones legales)
+  **Dado** que el usuario solicita al chat que investigue un delito, encarcele a un funcionario o imponga una sanción
+  **Cuando** el asistente analiza la intención de la consulta
+  **Entonces** debe responder aclarando sus límites legales basándose en la sección "¿Qué NO hace el CPC?"
+  **Y** debe explicar amablemente que el comité no investiga ni sanciona, pero que puede brindar orientación jurídica para canalizar la denuncia a la institución correspondiente.
+
+### Escenario: Manejo de consultas no relacionadas (Fallback)
+  **Dado** que el usuario hace preguntas fuera de contexto o no relacionadas con el Sistema Anticorrupción
+  **Cuando** el asistente no encuentra información relevante en la base de conocimientos del sitio
+  **Entonces** debe disculparse amablemente indicando que su conocimiento se limita a la información pública, normativa y actividades del CPC Tlaxcala.

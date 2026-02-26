@@ -4,7 +4,7 @@ description: "Marco legal y responsabilidades institucionales del Comité de Par
 draft: false
 ---
 
-El **Comité de Participación Ciudadana (CPC)** del Sistema Anticorrupción del Estado de Tlaxcala fundamenta su actuación en las siguientes atribuciones de ley, orientadas a fortalecer la transparencia y la integridad pública:
+El **Comité de Participación Ciudadana (CPC)** del Sistema Anticorrupción del Estado de Tlaxcala fundamenta su actuación en las siguientes atribuciones, orientadas a fortalecer la transparencia y la integridad pública:
 
 ### Coordinación e Información
 *   **Participación en la Comisión Ejecutiva:** Integrar y participar en la Comisión Ejecutiva de acuerdo con los términos establecidos en la Ley del Sistema Anticorrupción del Estado de Tlaxcala.
