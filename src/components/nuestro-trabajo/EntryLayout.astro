@@ -3,7 +3,6 @@ import type { NuestroTrabajoEntry } from "@/types";
 import { Image } from "astro:assets";
 import BaseLayout from "@components/base/BaseLayout.astro";
 
-
 interface Props {
   entry: NuestroTrabajoEntry;
 }
@@ -15,10 +14,21 @@ const {
   image,
   imageAlt,
   fotos,
+  docs,
 } = entry.data;
 
-
 ---
+
+<style>
+  .proyectos-pdf {
+    width: 100%;
+    height: 800px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+</style>
 
 <BaseLayout title={title} description={description} image={image?.src}>
   <section class="section">
@@ -28,52 +38,62 @@ const {
           <!-- Title -->
           <h1 set:html={title} class="p-2 col basis-full min-w-72" />
           
-          <!-- Images -->
+          <!-- PDF Documents -->
           {
-            fotos && Array.isArray(fotos) && fotos.length > 0 ? (
+            docs && Array.isArray(docs) && docs.length > 0 ? (
               <div class="row basis-full p-2">
-                <div class="overflow-x-auto pb-4 scrollbar-hide">
-                  {fotos.map((foto) => (
+                <div class="overflow-x-auto pb-4">
+                  {docs.map((doc) => (
                     <div class="w-full pb-5">
-                      <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-                        <Image
-                          class="w-full h-auto rounded-lg object-cover group-hover:scale-[105%] transition-all duration-300"
-                          src={foto}
-                          alt={imageAlt}
-                          width={620}
-                          height={620}
-                          loading="eager"
-                        />
+                      <div class="glass rounded-lg">
+                        <iframe title="PDF Document" class="proyectos-pdf" src={doc}>
+                        </iframe>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             ) : (
-              image && (
-                <div class="col basis-2/3 p-2 min-w-72">
-                  <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-                    <Image
-                      class="w-full rounded-lg"
-                      src={image}
-                      alt={imageAlt}
-                      width={1920}
-                      height={1080}
-                      loading="eager"
-                    />
+              /* Images */
+              fotos && Array.isArray(fotos) && fotos.length > 0 ? (
+                <div class="row basis-full p-2">
+                  <div class="overflow-x-auto pb-4 scrollbar-hide">
+                    {fotos.map((foto) => (
+                      <div class="w-full pb-5">
+                        <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                          <Image
+                            class="w-full h-auto rounded-lg object-cover group-hover:scale-[105%] transition-all duration-300"
+                            src={foto}
+                            alt={imageAlt}
+                            width={620}
+                            height={620}
+                            loading="eager"
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              ) : (
+                image && (
+                  <div class="col basis-2/3 p-2 min-w-72">
+                    <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                      <Image
+                        class="w-full rounded-lg"
+                        src={image}
+                        alt={imageAlt}
+                        width={1920}
+                        height={1080}
+                        loading="eager"
+                      />
+                    </div>
+                  </div>
+                )
               )
             )
           }
          
         </article>
-        <!-- Share -->
-        <div
-          class="flex col-10 p-2 items-center justify-center lg:justify-end px-6"
-        >
-         
-        </div>
       </div>
     </div>
   </section>

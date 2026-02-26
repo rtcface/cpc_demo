@@ -70,7 +70,10 @@ const grouped2025 = {
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {grouped2024.programa.map(entry => (
-                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <a 
+                      href={`/nuestro-trabajo/${entry.id}`}
+                      class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    >
                       <div class="flex items-center gap-3">
                         {entry.data.image && (
                           <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
@@ -145,7 +148,10 @@ const grouped2025 = {
                 </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {grouped2025.programa.map(entry => (
-                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <a 
+                      href={`/nuestro-trabajo/${entry.id}`}
+                      class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    >
                       <div class="flex items-center gap-3">
                         {entry.data.image && (
                           <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
