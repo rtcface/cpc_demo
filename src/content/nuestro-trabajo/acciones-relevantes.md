@@ -1,6 +1,8 @@
 ---
 title: Actividades Relevantes
 image: "@assets/images/acciones-relevantes/convocatoria_nueva_ABC.png"
+periodo: "2024-2025"
+categoria: "actividades"
 fotos:
   [
     "@assets/images/acciones-relevantes/25_dias_naranja.png",

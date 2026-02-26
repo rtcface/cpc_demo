@@ -1,0 +1,228 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { FaCalendarAlt, FaFileAlt, FaTasks, FaChartBar } from "react-icons/fa";
+
+const entries = await getCollection("nuestro-trabajo");
+
+const periodo2024 = entries.filter(e => e.data.periodo === "2024-2025");
+const periodo2025 = entries.filter(e => e.data.periodo === "2025-2026");
+
+const getCategoriaLabel = (cat: string) => {
+  switch(cat) {
+    case 'programa': return 'Programa de Trabajo Anual';
+    case 'actividades': return 'Actividades';
+    case 'informes': return 'Informes';
+    default: return cat;
+  }
+};
+
+const getCategoriaIcon = (cat: string) => {
+  switch(cat) {
+    case 'programa': return 'FaCalendarAlt';
+    case 'actividades': return 'FaTasks';
+    case 'informes': return 'FaChartBar';
+    default: return 'FaFileAlt';
+  }
+};
+
+const grouped2024 = {
+  programa: periodo2024.filter(e => e.data.categoria === 'programa'),
+  actividades: periodo2024.filter(e => e.data.categoria === 'actividades'),
+  informes: periodo2024.filter(e => e.data.categoria === 'informes'),
+};
+
+const grouped2025 = {
+  programa: periodo2025.filter(e => e.data.categoria === 'programa'),
+  actividades: periodo2025.filter(e => e.data.categoria === 'actividades'),
+  informes: periodo2025.filter(e => e.data.categoria === 'informes'),
+};
+---
+
+<BaseLayout title="Nuestro Trabajo" description="Trabajos del CPC">
+  <PageHeader title="Nuestro Trabajo" />
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-12 lg:col-12">
+          <!-- Periodo 2024-2025 -->
+          <div class="glass rounded-lg mb-6">
+            <button 
+              class="periodo-btn w-full text-left px-6 py-4 flex items-center justify-between bg-blue-600 text-white rounded-t-lg"
+              data-periodo="2024"
+            >
+              <span class="flex items-center gap-3 text-lg font-bold">
+                <FaCalendarAlt />
+                Periodo 2024 - 2025
+              </span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <div class="periodo-content p-6" id="2024">
+              <!-- Programa -->
+              <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaCalendarAlt className="text-blue-600" />
+                  {getCategoriaLabel('programa')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2024.programa.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Actividades -->
+              <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaTasks className="text-green-600" />
+                  {getCategoriaLabel('actividades')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2024.actividades.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Informes -->
+              <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaChartBar className="text-purple-600" />
+                  {getCategoriaLabel('informes')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2024.informes.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Periodo 2025-2026 -->
+          <div class="glass rounded-lg">
+            <button 
+              class="periodo-btn w-full text-left px-6 py-4 flex items-center justify-between bg-gray-600 text-white rounded-t-lg"
+              data-periodo="2025"
+            >
+              <span class="flex items-center gap-3 text-lg font-bold">
+                <FaCalendarAlt />
+                Periodo 2025 - 2026
+              </span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <div class="periodo-content p-6 hidden" id="2025">
+              <!-- Programa -->
+              <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaCalendarAlt className="text-blue-600" />
+                  {getCategoriaLabel('programa')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2025.programa.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Actividades -->
+              <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaTasks className="text-green-600" />
+                  {getCategoriaLabel('actividades')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2025.actividades.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <!-- Informes -->
+              <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                  <FaChartBar className="text-purple-600" />
+                  {getCategoriaLabel('informes')}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {grouped2025.informes.map(entry => (
+                    <a href={`/nuestro-trabajo/${entry.id}`} class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                      <div class="flex items-center gap-3">
+                        {entry.data.image && (
+                          <Image src={entry.data.image} alt={entry.data.title} width={60} height={60} class="rounded" />
+                        )}
+                        <span class="font-medium text-gray-700 dark:text-gray-300">{entry.data.title}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', initAccordion);
+  document.addEventListener('DOMContentLoaded', initAccordion);
+
+  function initAccordion() {
+    const buttons = document.querySelectorAll('.periodo-btn');
+    
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const periodo = btn.getAttribute('data-periodo');
+        const content = document.getElementById(periodo);
+        const icon = btn.querySelector('.toggle-icon');
+        
+        if (content) {
+          content.classList.toggle('hidden');
+          if (icon) {
+            icon.textContent = content.classList.contains('hidden') ? '▶' : '▼';
+          }
+        }
+      });
+    });
+  }
+</script>

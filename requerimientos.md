@@ -156,3 +156,31 @@ Este documento contiene las historias de usuario y criterios de aceptación reda
     * [cite_start]Convención de las Naciones Unidas Contra la Corrupción [cite: 101]
     * [cite_start]Pacto Internacional de Derechos Civiles y Políticos [cite: 106]
     * [cite_start]Reglamento Interno del CPC [cite: 127, 128]
+
+    ---
+
+## Característica: Organización de "Nuestro Trabajo" por Periodos
+**Como** ciudadano o integrante del sistema
+**Quiero** que la sección de trabajo esté organizada por ciclos anuales
+**Para** consultar el histórico de actividades y documentos de manera ordenada y cronológica.
+
+### Escenario: Agrupación de contenido existente en el periodo 2024 - 2025
+  [cite_start]**Dado** que el usuario accede a la sección "Nuestro Trabajo" [cite: 129, 130]
+  **Cuando** el sistema carga los componentes de la página
+  **Entonces** debe aparecer un contenedor de nivel superior titulado "Periodo 2024 - 2025"
+  **Y** dentro de este contenedor se deben mostrar los recuadros actuales:
+    * [cite_start]Programa de Trabajo Anual [cite: 131]
+    * [cite_start]Actividades (correspondientes a ese año) [cite: 132]
+    * [cite_start]Informes [cite: 133]
+
+### Escenario: Preparación para el nuevo ciclo 2025 - 2026
+  **Dado** que el sitio entra en un nuevo año de gestión
+  **Cuando** el usuario visualiza la sección "Nuestro Trabajo"
+  **Entonces** debe visualizar un segundo contenedor de nivel superior titulado "Periodo 2025 - 2026"
+  [cite_start]**Y** este debe mantener la misma estructura y funcionalidad de recuadros que el periodo anterior 
+  **Y** el diseño debe permitir colapsar o expandir cada periodo para facilitar la lectura.
+
+### Escenario: Mantenimiento de la estructura interna
+  [cite_start]**Dado** que el contenido está agrupado por años [cite: 132]
+  **Cuando** el usuario interactúa con un recuadro específico (ej. Informes) dentro de cualquier periodo
+  **Entonces** la funcionalidad de visualización o descarga de documentos debe operar exactamente igual a la versión anterior, respetando la navegación actual.
