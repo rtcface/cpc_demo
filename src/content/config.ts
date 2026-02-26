@@ -59,9 +59,9 @@ const nuestroTrabajo = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       fotos: z.array(image()).optional(),
-      periodo: z.enum(["2024-2025", "2025-2026"]).default("2024-2025"),
+      periodo: z.enum(["2024-2025", "2025-2026", "index"]).default("2024-2025"),
       categoria: z
-        .enum(["programa", "actividades", "informes"])
+        .enum(["programa", "actividades", "informes", "index"])
         .default("actividades"),
     }),
 });

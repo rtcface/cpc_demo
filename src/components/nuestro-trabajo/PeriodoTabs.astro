@@ -6,9 +6,10 @@ import { getCollection } from "astro:content";
 import { FaCalendarAlt, FaFileAlt, FaTasks, FaChartBar } from "react-icons/fa";
 
 const entries = await getCollection("nuestro-trabajo");
+const filteredEntries = entries.filter(e => e.data.periodo !== "index" && e.data.periodo !== "none");
 
-const periodo2024 = entries.filter(e => e.data.periodo === "2024-2025");
-const periodo2025 = entries.filter(e => e.data.periodo === "2025-2026");
+const periodo2024 = filteredEntries.filter(e => e.data.periodo === "2024-2025");
+const periodo2025 = filteredEntries.filter(e => e.data.periodo === "2025-2026");
 
 const getCategoriaLabel = (cat: string) => {
   switch(cat) {
