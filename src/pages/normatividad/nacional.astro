@@ -1,10 +1,13 @@
 ---
-import type { NormatividadEntry} from "@/types";
+import type { NormatividadEntry } from "@/types";
 import EntryLayout from "@components/normatividad/EntryLayout.astro";
 import { getCollection } from "astro:content";
 
 const entries = await getCollection("normatividad");
-const entry = entries.find(entry => entry.id === "nacional") as NormatividadEntry;
+const entry = entries.find(
+  (entry) => entry.id === "nacional",
+) as NormatividadEntry;
 ---
 
-<EntryLayout entry={entry} /> 
+<EntryLayout entry={entry} />
+

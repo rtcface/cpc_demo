@@ -11,13 +11,13 @@ const searchableCollections = [
   "nuestroCompromiso",
   "normatividad",
   "nuestro-trabajo",
-  "estudios-proyectos"
+  "estudios-proyectos",
 ] as CollectionKey[];
 
 const searchList = (await getEntriesBatch(
   searchableCollections,
   undefined,
-  false
+  false,
 )) as SearchableEntry[];
 ---
 

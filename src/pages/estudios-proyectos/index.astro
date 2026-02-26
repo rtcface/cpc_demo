@@ -4,8 +4,13 @@ import { getIndex, getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
 import type { EstudiosProyectosEntry } from "@/types";
 
-const entryIndex = (await getIndex("estudios-proyectos")) as EstudiosProyectosEntry;
-const entries = (await getEntries("estudios-proyectos", sortByDate)) as EstudiosProyectosEntry[];
+const entryIndex = (await getIndex(
+  "estudios-proyectos",
+)) as EstudiosProyectosEntry;
+const entries = (await getEntries(
+  "estudios-proyectos",
+  sortByDate,
+)) as EstudiosProyectosEntry[];
 
 const { slug } = Astro.params;
 

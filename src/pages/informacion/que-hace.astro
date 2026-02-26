@@ -4,7 +4,10 @@ import EntryLayout from "@components/common/information/EntryLayout.astro";
 import { getCollection } from "astro:content";
 
 const entries = await getCollection("informacion");
-const entry = entries.find(entry => entry.id === "que-hace") as InformationEntry;
+const entry = entries.find(
+  (entry) => entry.id === "que-hace",
+) as InformationEntry;
 ---
 
-<EntryLayout entry={entry} /> 
+<EntryLayout entry={entry} />
+

@@ -5,7 +5,10 @@ import { getEntries } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = await getEntries("nuestro-trabajo", sortByTitle) as NuestroTrabajoEntry[];
+  const entries = (await getEntries(
+    "nuestro-trabajo",
+    sortByTitle,
+  )) as NuestroTrabajoEntry[];
   const paths = entries.map((entry) => ({
     params: {
       entry: entry.id,

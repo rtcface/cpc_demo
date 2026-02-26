@@ -2,15 +2,15 @@
 import TeamMemberCard from "./TeamMemberCard.astro";
 import { Image } from "astro:assets";
 
-import cpcTeam from '@assets/images/team/Cpc_team.jpeg';
+import cpcTeam from "@assets/images/team/Cpc_team.jpeg";
 
-import elizabethOlivares from '@assets/images/team/elizabeth-olivares.jpg';
-import carlosPerez from '@assets/images/team/carlos-perez.jpg';
-import juanCruz from '@assets/images/team/juan-cruz.png';
-import victorFlores from '@assets/images/team/victor-flores.png';
-import guadalupeOrtega from '@assets/images/team/guadalupe-ortega-gutierrez.png';
-import brandonJimenez from '@assets/images/team/brandon-jimenez-enriquez.png';
-import vacante from '@assets/images/team/vacante.webp';
+import elizabethOlivares from "@assets/images/team/elizabeth-olivares.jpg";
+import carlosPerez from "@assets/images/team/carlos-perez.jpg";
+import juanCruz from "@assets/images/team/juan-cruz.png";
+import victorFlores from "@assets/images/team/victor-flores.png";
+import guadalupeOrtega from "@assets/images/team/guadalupe-ortega-gutierrez.png";
+import brandonJimenez from "@assets/images/team/brandon-jimenez-enriquez.png";
+import vacante from "@assets/images/team/vacante.webp";
 
 const teamMembers = [
   {
@@ -19,7 +19,7 @@ const teamMembers = [
     imageUrl: juanCruz,
     curriculumUrl: "/curriculum/juan-cruz",
   },
-  
+
   {
     name: "Lcdo. Carlos Jonathan Pérez Ramírez",
     position: "Integrante",
@@ -32,7 +32,7 @@ const teamMembers = [
     imageUrl: guadalupeOrtega,
     curriculumUrl: "#",
   },
-   
+
   {
     name: "Lcdo. Brandon Jiménez Enríquez",
     position: "Integrante",
@@ -44,23 +44,27 @@ const teamMembers = [
     position: "Integrante",
     imageUrl: vacante,
     curriculumUrl: "/curriculum/pendiente-por-designar",
-  }
+  },
 ];
 ---
 
 <div class="mb-12 text-center">
-    <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-      El Comité de Participación Ciudadana
-    </h1>
-    <p class="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-300">
-      El Comité de Participación Ciudadana (CPC) del Sistema Anticorrupción del Estado de Tlaxcala tiene un papel clave y estratégico dentro de la lucha contra la corrupción. Su misión es fortalecer la cultura de integridad, promover la participación activa de la sociedad y trabajar de la mano con las instituciones para construir un gobierno más transparente y accountable.
-    </p>
-  </div>
-  <div class="flex justify-center">
-    <Image 
-      src={cpcTeam} 
-      alt="Integrantes del Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala" 
-      class="rounded-lg shadow-lg max-w-full h-auto"
-      width={800}
-    />
-  </div>
+  <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+    El Comité de Participación Ciudadana
+  </h1>
+  <p class="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-300">
+    El Comité de Participación Ciudadana (CPC) del Sistema Anticorrupción del
+    Estado de Tlaxcala tiene un papel clave y estratégico dentro de la lucha
+    contra la corrupción. Su misión es fortalecer la cultura de integridad,
+    promover la participación activa de la sociedad y trabajar de la mano con
+    las instituciones para construir un gobierno más transparente y accountable.
+  </p>
+</div>
+<div class="flex justify-center">
+  <Image
+    src={cpcTeam}
+    alt="Integrantes del Comité de Participación Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala"
+    class="rounded-lg shadow-lg max-w-full h-auto"
+    width={800}
+  />
+</div>

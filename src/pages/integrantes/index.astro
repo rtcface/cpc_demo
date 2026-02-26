@@ -5,8 +5,11 @@ import { getEntries } from "@lib/contentParser";
 import { getIndex } from "@lib/contentParser";
 import { sortByOrder } from "@lib/sortByOrder";
 
-const authorIndex = await getIndex("integrantes") as IntegrantesEntry;
-const entries = await getEntries("integrantes", sortByOrder) as IntegrantesEntry[];
+const authorIndex = (await getIndex("integrantes")) as IntegrantesEntry;
+const entries = (await getEntries(
+  "integrantes",
+  sortByOrder,
+)) as IntegrantesEntry[];
 ---
 
 <CollectionLayout integranteIndex={authorIndex} entries={entries} />

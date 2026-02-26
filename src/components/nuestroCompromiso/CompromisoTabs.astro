@@ -5,8 +5,8 @@ import { FaBullseye, FaEye } from "react-icons/fa";
 import { getCollection } from "astro:content";
 
 const entries = await getCollection("nuestroCompromiso");
-const missionEntry = entries.find(entry => entry.id === "mision");
-const visionEntry = entries.find(entry => entry.id === "vision");
+const missionEntry = entries.find((entry) => entry.id === "mision");
+const visionEntry = entries.find((entry) => entry.id === "vision");
 ---
 
 <BaseLayout title="Nuestro Compromiso" description="Misión y Visión del CPC">
@@ -18,25 +18,27 @@ const visionEntry = entries.find(entry => entry.id === "vision");
         <div class="md:col-10 lg:col-8">
           <div class="glass rounded-lg p-6">
             <div class="flex justify-center gap-4 mb-6" id="compromiso-tabs">
-              <button 
+              <button
                 class="tab-btn active px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-blue-600 text-white flex items-center gap-2"
                 data-tab="mision"
               >
                 <FaBullseye />
-                Misión
+                 Misión
               </button>
-              <button 
+              <button
                 class="tab-btn px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 flex items-center gap-2"
                 data-tab="vision"
               >
                 <FaEye />
-                Visión
+                 Visión
               </button>
             </div>
 
             <div class="tab-content active p-4" id="mision">
               <div class="prose dark:prose-invert max-w-none">
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p
+                  class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                >
                   {missionEntry?.body}
                 </p>
               </div>
@@ -44,7 +46,9 @@ const visionEntry = entries.find(entry => entry.id === "vision");
 
             <div class="tab-content hidden p-4" id="vision">
               <div class="prose dark:prose-invert max-w-none">
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p
+                  class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                >
                   {visionEntry?.body}
                 </p>
               </div>
@@ -63,35 +67,35 @@ const visionEntry = entries.find(entry => entry.id === "vision");
 </style>
 
 <script>
-  document.addEventListener('astro:page-load', initTabs);
-  document.addEventListener('DOMContentLoaded', initTabs);
+  document.addEventListener("astro:page-load", initTabs);
+  document.addEventListener("DOMContentLoaded", initTabs);
 
   function initTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetId = tab.getAttribute('data-tab');
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.getAttribute("data-tab");
         if (!targetId) return;
 
-        tabs.forEach(t => {
-          t.classList.remove('bg-blue-600', 'text-white');
-          t.classList.add('bg-gray-200', 'dark:bg-gray-700');
+        tabs.forEach((t) => {
+          t.classList.remove("bg-blue-600", "text-white");
+          t.classList.add("bg-gray-200", "dark:bg-gray-700");
         });
 
-        tab.classList.add('bg-blue-600', 'text-white');
-        tab.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+        tab.classList.add("bg-blue-600", "text-white");
+        tab.classList.remove("bg-gray-200", "dark:bg-gray-700");
 
-        contents.forEach(content => {
-          content.classList.add('hidden');
-          content.classList.remove('active');
+        contents.forEach((content) => {
+          content.classList.add("hidden");
+          content.classList.remove("active");
         });
 
         const targetContent = document.getElementById(targetId);
         if (targetContent) {
-          targetContent.classList.remove('hidden');
-          targetContent.classList.add('active');
+          targetContent.classList.remove("hidden");
+          targetContent.classList.add("active");
         }
       });
     });

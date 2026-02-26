@@ -12,7 +12,10 @@ interface Props {
 const { integranteIndex: integranteIndex, entries } = Astro.props;
 ---
 
-<BaseLayout title={integranteIndex.data.title} description={integranteIndex.data.description}>
+<BaseLayout
+  title={integranteIndex.data.title}
+  description={integranteIndex.data.description}
+>
   <PageHeader title={integranteIndex.data.title} />
   <section class="section-sm pb-0">
     <div class="container">

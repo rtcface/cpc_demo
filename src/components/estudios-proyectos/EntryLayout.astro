@@ -3,32 +3,23 @@ import type { EstudiosProyectosEntry } from "@/types";
 import { Image } from "astro:assets";
 import BaseLayout from "@components/base/BaseLayout.astro";
 
-
 interface Props {
   entry: EstudiosProyectosEntry;
 }
 
 const { entry } = Astro.props;
-const {
-  title, 
-  description,
-  image,
-  imageAlt,
-  docs
-} = entry.data;
-
-
-
+const { title, description, image, imageAlt, docs } = entry.data;
 ---
+
 <style>
   .proyectos-pdf {
-            width: 100%;
-            height: 1200px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
+    width: 100%;
+    height: 1200px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
 </style>
 <BaseLayout title={title} description={description} image={image?.src}>
   <section class="section">
@@ -37,18 +28,20 @@ const {
         <article class="lg:col-10 flex flex-wrap content-start">
           <!-- Title -->
           <h1 set:html={title} class="p-2 col basis-full min-w-72" />
-          
+
           <!-- Images -->
-           {
+          {
             docs && Array.isArray(docs) && docs.length > 0 ? (
               <div class="row basis-full p-2">
                 <div class="overflow-x-auto pb-4 scrollbar-hide">
                   {docs.map((doc) => (
                     <div class="w-full pb-5">
                       <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-                        <iframe title="PDF Document" class="proyectos-pdf" src={doc}>
-                        </iframe>
-                        
+                        <iframe
+                          title="PDF Document"
+                          class="proyectos-pdf"
+                          src={doc}
+                        ></iframe>
                       </div>
                     </div>
                   ))}
@@ -58,19 +51,17 @@ const {
               docs && (
                 <div class="col basis-2/3 p-2 min-w-72">
                   <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-                   <h4>Sin documentos</h4>
+                    <h4>Sin documentos</h4>
                   </div>
                 </div>
               )
             )
           }
-          
         </article>
         <!-- Share -->
         <div
           class="flex col-10 p-2 items-center justify-center lg:justify-end px-6"
         >
-         
         </div>
       </div>
     </div>
