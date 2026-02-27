@@ -1,5 +1,5 @@
 ---
-title: "Objetivo del CPC"
+title: "Objetivo General"
 description: "Conoce la misión y objetivos principales del Comité de Participación Ciudadana"
 draft: false
 ---

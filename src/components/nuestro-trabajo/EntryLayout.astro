@@ -2,6 +2,7 @@
 import type { NuestroTrabajoEntry } from "@/types";
 import { Image } from "astro:assets";
 import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
 
 interface Props {
   entry: NuestroTrabajoEntry;
@@ -23,6 +24,7 @@ const { title, description, image, imageAlt, fotos, docs } = entry.data;
 </style>
 
 <BaseLayout title={title} description={description} image={image?.src}>
+  <PageHeader title={title} />
   <section class="section">
     <div class="container">
       <div class="row justify-center">
