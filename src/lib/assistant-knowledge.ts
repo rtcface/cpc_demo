@@ -34,7 +34,7 @@ export const knowledgeBase: KnowledgeItem[] = [
       "• **Propuestas y Mejora Regulatoria**: Emite opiniones sobre políticas integrales anticorrupción y propone proyectos de coordinación interinstitucional.\n\n" +
       "• **Evaluación y Vigilancia**: Opina sobre el Programa Anual de Trabajo y monitorea el funcionamiento del Sistema Estatal Anticorrupción.\n\n" +
       "• **Vinculación Ciudadana**: Promueve investigaciones con instituciones académicas y fortalece la contraloría social.",
-    link: "/informacion/que-hace",
+    link: "/conocenos/atribuciones",
     linkText: "Ver atribuciones completas",
   },
   {
@@ -63,7 +63,7 @@ export const knowledgeBase: KnowledgeItem[] = [
       "**Sobre la impartición de justicia**: El CPC NO tiene facultades para sancionar penalmente ni encarcelar a servidores públicos. No somos una autoridad judicial.\n\n" +
       "**Sobre la investigación administrativa**: El Comité NO realiza investigaciones directas ni impone sanciones administrativas.\n\n" +
       "**Lo que SÍ hacemos**: Brindamos orientación jurídica especializada para canalizar tu inquietud ante las autoridades competentes (Tribunal de Contasía, Fiscalía Anticorrupción, etc.).",
-    link: "/informacion/que-no-hace",
+    link: "/conocenos/que-no-hace",
     linkText: "Más sobre nuestros límites",
   },
   {
@@ -112,10 +112,10 @@ export const knowledgeBase: KnowledgeItem[] = [
     response:
       "Si deseas denunciar un hecho de corrupción, el CPC te orienta sobre los canales adecuados:\n\n" +
       "**Puedes denunciar ante:**\n" +
-      "• **Fiscalía Especializada en Combate a la Corrupción**: Para hechos que podrían constituir delitos penales.\n" +     
+      "• **Fiscalía Especializada en Combate a la Corrupción**: Para hechos que podrían constituir delitos penales.\n" +
       "• **Contraloría del municipio o dependencia**: Para quejas contra servidores públicos.\n\n" +
       "El CPC no investiga ni sanciona, pero puede orientarte sobre cuál es la instancia correcta para tu caso.",
-    link: "/informacion/que-no-hace",
+    link: "/conocenos/que-no-hace",
     linkText: "Más información",
   },
   {
@@ -166,7 +166,7 @@ export const knowledgeBase: KnowledgeItem[] = [
       "• **Coordinar acciones** entre las instituciones del Sistema Anticorrupción.\n\n" +
       "• **Promover la participación ciudadana** en la prevención y detección de la corrupción.\n\n" +
       "• **Proponer políticas públicas** basadas en estudios técnicos para mejorar la gestión gubernamental.",
-    link: "/informacion/objetivo",
+    link: "/conocenos/objetivo-general",
     linkText: "Ver objetivo completo",
   },
   {
@@ -200,8 +200,8 @@ export const knowledgeBase: KnowledgeItem[] = [
       "• **Teléfono**: (246) 123 4567\n" +
       "• **Correo**: contacto@cpc-tlaxcala.org\n\n" +
       "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 horas.",
-    link: "/contacto",
-    linkText: "Más opciones de contacto",
+    link: "/conocenos",
+    linkText: "Más sobre el CPC",
   },
   {
     id: "programa",
