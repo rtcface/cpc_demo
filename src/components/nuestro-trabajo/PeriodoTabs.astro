@@ -63,128 +63,8 @@ const grouped2025 = {
     <div class="container">
       <div class="row justify-center">
         <div class="md:col-12 lg:col-12">
-          <!-- Periodo 2024-2025 -->
-          <div class="glass rounded-lg mb-6">
-            <button
-              class="periodo-btn w-full text-left px-6 py-4 flex items-center justify-between bg-blue-600 text-white rounded-t-lg"
-              data-periodo="2024"
-            >
-              <span class="flex items-center gap-3 text-lg font-bold">
-                <FaCalendarAlt />
-                 Periodo 2024 - 2025
-              </span>
-              <span class="toggle-icon">▼</span>
-            </button>
-            <div class="periodo-content p-6" id="2024">
-              <!-- Programa -->
-              <div class="mb-6">
-                <h3
-                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
-                >
-                  <FaCalendarAlt className="text-blue-600" />
-                  {getCategoriaLabel("programa")}
-                </h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {
-                    grouped2024.programa.map((entry) => (
-                      <a
-                        href={`/nuestro-trabajo/${entry.id}`}
-                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                      >
-                        <div class="flex items-center gap-3">
-                          {entry.data.image && (
-                            <Image
-                              src={entry.data.image}
-                              alt={entry.data.title}
-                              width={60}
-                              height={60}
-                              class="rounded"
-                            />
-                          )}
-                          <span class="font-medium text-gray-700 dark:text-gray-300">
-                            {entry.data.title}
-                          </span>
-                        </div>
-                      </a>
-                    ))
-                  }
-                </div>
-              </div>
-
-              <!-- Actividades -->
-              <div class="mb-6">
-                <h3
-                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
-                >
-                  <FaTasks className="text-green-600" />
-                  {getCategoriaLabel("actividades")}
-                </h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {
-                    grouped2024.actividades.map((entry) => (
-                      <a
-                        href={`/nuestro-trabajo/${entry.id}`}
-                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                      >
-                        <div class="flex items-center gap-3">
-                          {entry.data.image && (
-                            <Image
-                              src={entry.data.image}
-                              alt={entry.data.title}
-                              width={60}
-                              height={60}
-                              class="rounded"
-                            />
-                          )}
-                          <span class="font-medium text-gray-700 dark:text-gray-300">
-                            {entry.data.title}
-                          </span>
-                        </div>
-                      </a>
-                    ))
-                  }
-                </div>
-              </div>
-
-              <!-- Informes -->
-              <div>
-                <h3
-                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
-                >
-                  <FaChartBar className="text-purple-600" />
-                  {getCategoriaLabel("informes")}
-                </h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {
-                    grouped2024.informes.map((entry) => (
-                      <a
-                        href={`/nuestro-trabajo/${entry.id}`}
-                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                      >
-                        <div class="flex items-center gap-3">
-                          {entry.data.image && (
-                            <Image
-                              src={entry.data.image}
-                              alt={entry.data.title}
-                              width={60}
-                              height={60}
-                              class="rounded"
-                            />
-                          )}
-                          <span class="font-medium text-gray-700 dark:text-gray-300">
-                            {entry.data.title}
-                          </span>
-                        </div>
-                      </a>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Periodo 2025-2026 -->
-          <div class="glass rounded-lg">
+          <div class="glass rounded-lg mb-6">
             <button
               class="periodo-btn w-full text-left px-6 py-4 flex items-center justify-between bg-gray-600 text-white rounded-t-lg"
               data-periodo="2025"
@@ -195,7 +75,7 @@ const grouped2025 = {
               </span>
               <span class="toggle-icon">▼</span>
             </button>
-            <div class="periodo-content p-6 hidden" id="2025">
+            <div class="periodo-content p-6" id="2025">
               <!-- Programa -->
               <div class="mb-6">
                 <h3
@@ -277,6 +157,125 @@ const grouped2025 = {
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {
                     grouped2025.informes.map((entry) => (
+                      <a
+                        href={`/nuestro-trabajo/${entry.id}`}
+                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      >
+                        <div class="flex items-center gap-3">
+                          {entry.data.image && (
+                            <Image
+                              src={entry.data.image}
+                              alt={entry.data.title}
+                              width={60}
+                              height={60}
+                              class="rounded"
+                            />
+                          )}
+                          <span class="font-medium text-gray-700 dark:text-gray-300">
+                            {entry.data.title}
+                          </span>
+                        </div>
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Periodo 2024-2025 -->
+          <div class="glass rounded-lg mb-6">
+            <button
+              class="periodo-btn w-full text-left px-6 py-4 flex items-center justify-between bg-blue-600 text-white rounded-t-lg"
+              data-periodo="2024"
+            >
+              <span class="flex items-center gap-3 text-lg font-bold">
+                <FaCalendarAlt />
+                 Periodo 2024 - 2025
+              </span>
+              <span class="toggle-icon">▼</span>
+            </button>
+            <div class="periodo-content p-6 hidden" id="2024">
+              <!-- Programa -->
+              <div class="mb-6">
+                <h3
+                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
+                >
+                  <FaCalendarAlt className="text-blue-600" />
+                  {getCategoriaLabel("programa")}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {
+                    grouped2024.programa.map((entry) => (
+                      <a
+                        href={`/nuestro-trabajo/${entry.id}`}
+                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      >
+                        <div class="flex items-center gap-3">
+                          {entry.data.image && (
+                            <Image
+                              src={entry.data.image}
+                              alt={entry.data.title}
+                              width={60}
+                              height={60}
+                              class="rounded"
+                            />
+                          )}
+                          <span class="font-medium text-gray-700 dark:text-gray-300">
+                            {entry.data.title}
+                          </span>
+                        </div>
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+
+              <!-- Actividades -->
+              <div class="mb-6">
+                <h3
+                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
+                >
+                  <FaTasks className="text-green-600" />
+                  {getCategoriaLabel("actividades")}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {
+                    grouped2024.actividades.map((entry) => (
+                      <a
+                        href={`/nuestro-trabajo/${entry.id}`}
+                        class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                      >
+                        <div class="flex items-center gap-3">
+                          {entry.data.image && (
+                            <Image
+                              src={entry.data.image}
+                              alt={entry.data.title}
+                              width={60}
+                              height={60}
+                              class="rounded"
+                            />
+                          )}
+                          <span class="font-medium text-gray-700 dark:text-gray-300">
+                            {entry.data.title}
+                          </span>
+                        </div>
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+
+              <!-- Informes -->
+              <div>
+                <h3
+                  class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white"
+                >
+                  <FaChartBar className="text-purple-600" />
+                  {getCategoriaLabel("informes")}
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {
+                    grouped2024.informes.map((entry) => (
                       <a
                         href={`/nuestro-trabajo/${entry.id}`}
                         class="block p-4 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
