@@ -51,6 +51,38 @@
     opacity: 0.04;
   }
 
+  .cpc-logo-top-right {
+    position: fixed;
+    top: 90px;
+    right: 16px;
+    width: 120px;
+    height: auto;
+    opacity: 0.85;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  @media (min-width: 640px) {
+    .cpc-logo-top-right {
+      width: 160px;
+      right: 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cpc-logo-top-right {
+      width: 200px;
+      top: 100px;
+      right: 32px;
+    }
+  }
+
+  html.dark .cpc-logo-top-right {
+    opacity: 0.7;
+    filter: brightness(0) invert(1) drop-shadow(0 0 3px rgba(255,255,255,0.8));
+  }
+
   .greca-marco {
     position: fixed;
     top: 0;
@@ -78,5 +110,12 @@
   src="/src/assets/images/utils/logo_cpc.png"
   alt=""
   class="cpc-logo-bg"
+  aria-hidden="true"
+/>
+
+<img
+  src="/src/assets/images/utils/PropuestaFinal_CPC_v1.png"
+  alt=""
+  class="cpc-logo-top-right"
   aria-hidden="true"
 />
