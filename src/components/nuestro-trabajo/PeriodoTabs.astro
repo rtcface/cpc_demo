@@ -309,12 +309,14 @@ const grouped2025 = {
 
 <script>
   document.addEventListener("astro:page-load", initAccordion);
-  document.addEventListener("DOMContentLoaded", initAccordion);
 
   function initAccordion() {
     const buttons = document.querySelectorAll(".periodo-btn");
 
     buttons.forEach((btn) => {
+      if (btn.hasAttribute("data-initialized")) return;
+      btn.setAttribute("data-initialized", "true");
+
       btn.addEventListener("click", () => {
         const periodo = btn.getAttribute("data-periodo");
         const content = document.getElementById(periodo);

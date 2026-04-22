@@ -1,0 +1,86 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import { FaFilePdf, FaDownload } from "react-icons/fa";
+
+const avisos = [
+  {
+    id: "convocatorias-concursos",
+    titulo: "Convocatorias y Concursos",
+    archivo: "6.API_concursoscpc.pdf",
+    archivoSimplificado: "APS_concursoscpc.pdf",
+  },
+  {
+    id: "capacitativas-informativas",
+    titulo: "Capacitativas e Informativas",
+    archivo: "6.API_capinformativascpc.pdf",
+    archivoSimplificado: "APS_capinformativascpc.pdf",
+  },
+  {
+    id: "capacitaciones-socializaciones",
+    titulo: "Capacitaciones y Socializaciones",
+    archivo: "6.API_capacitaciones_socializacionescpc.pdf",
+    archivoSimplificado: "APS_capacitaciones_socializacionescpc.pdf",
+  },
+];
+
+const pdfPath = "/docs/pdfs/avisos-privacidad/";
+---
+
+<BaseLayout
+  title="Avisos de Privacidad"
+  description="Avisos de Privacidad del CPC Tlaxcala"
+>
+  <PageHeader title="Avisos de Privacidad" />
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-12 lg:col-12">
+          <div class="glass rounded-lg p-6">
+            <p class="text-gray-600 dark:text-gray-400 mb-8 text-center">
+              Consulta los avisos de privacidad del Comité de Participación
+              Ciudadana del Sistema Anticorrupción del Estado de Tlaxcala.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {
+                avisos.map((aviso) => (
+                  <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-3 mb-4">
+                      <FaFilePdf className="text-red-600 text-2xl flex-shrink-0" />
+                      <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+                        {aviso.titulo}
+                      </h3>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                      <a
+                        href={`${pdfPath}${aviso.archivo}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        <FaDownload />
+                        Integral
+                      </a>
+                      <a
+                        href={`${pdfPath}${aviso.archivoSimplificado}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition-colors"
+                      >
+                        <FaDownload />
+                        Simplificada
+                      </a>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
