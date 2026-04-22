@@ -26,6 +26,7 @@ export type RecipesEntry = CollectionEntry<"recipes">;
 export type NuestroTrabajoEntry = CollectionEntry<"nuestro-trabajo">;
 export type EstudiosProyectosEntry = CollectionEntry<"estudios-proyectos">;
 export type TermsEntry = CollectionEntry<"terms">;
+export type InformacionInteresEntry = CollectionEntry<"informacion-interes">;
 
 export type SearchableEntry =
   | NosotrosEntry
@@ -34,7 +35,8 @@ export type SearchableEntry =
   | NuestroCompromisoEntry
   | NormatividadEntry
   | EstudiosProyectosEntry
-  | NuestroTrabajoEntry;
+  | NuestroTrabajoEntry
+  | InformacionInteresEntry;
 
 export type SocialLinks = {
   discord?: string;

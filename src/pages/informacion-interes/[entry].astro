@@ -1,0 +1,24 @@
+---
+import type { InformacionInteresEntry } from "@/types";
+import EntryLayout from "@components/informacion-interes/EntryLayout.astro";
+import { getEntries } from "@lib/contentParser";
+import { sortByTitle } from "@lib/sortFunctions";
+
+export async function getStaticPaths() {
+  const entries = (await getEntries(
+    "informacion-interes",
+    sortByTitle,
+  )) as InformacionInteresEntry[];
+  const paths = entries.map((entry) => ({
+    params: {
+      entry: entry.id,
+    },
+    props: { entry },
+  }));
+  return paths;
+}
+
+const { entry } = Astro.props;
+---
+
+<EntryLayout entry={entry} />

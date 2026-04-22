@@ -1,0 +1,53 @@
+---
+import type { InformacionInteresEntry } from "@/types";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import { getEntries } from "@lib/contentParser";
+import { sortByTitle } from "@lib/sortFunctions";
+
+const entries = (await getEntries(
+  "informacion-interes",
+  sortByTitle,
+)) as InformacionInteresEntry[];
+---
+
+<BaseLayout title="Información de Interés" description="Documentos de interés del Comité de Participación Ciudadana">
+  <PageHeader title="Información de Interés" />
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          {
+            entries.length > 0 ? (
+              <ul class="space-y-4">
+                {
+                  entries.map((entry) => (
+                    <li>
+                      <a
+                        href={`/informacion-interes/${entry.id}`}
+                        class="block p-4 rounded-lg glass hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                      >
+                        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                          {entry.data.title}
+                        </h2>
+                        {entry.data.description && (
+                          <p class="mt-2 text-gray-600 dark:text-gray-300">
+                            {entry.data.description}
+                          </p>
+                        )}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            ) : (
+              <p class="text-gray-600 dark:text-gray-300">
+                No hay documentos disponibles.
+              </p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

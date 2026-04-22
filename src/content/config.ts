@@ -103,20 +103,36 @@ imageAlt: z.string().default(""),
 });
 
 const nuestroCompromiso = defineCollection({
-  loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
-    base: "./src/content/nuestroCompromiso",
-  }),
-  schema: ({ image }) =>
-    searchable.extend({
-      email: z.string().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default(""),
-      social: social.optional(),
+    loader: glob({
+      pattern: "**/[^_]*.{md,mdx}",
+      base: "./src/content/nuestroCompromiso",
     }),
-});
+    schema: ({ image }) =>
+      searchable.extend({
+        email: z.string().optional(),
+        image: image().optional(),
+        imageAlt: z.string().default(""),
+        social: social.optional(),
+      }),
+  });
 
-const normatividad = defineCollection({
+  const informacionInteres = defineCollection({
+    loader: glob({
+      pattern: "**/[^_]*.{md,mdx}",
+      base: "./src/content/informacion-interes",
+    }),
+    schema: ({ image }) =>
+      searchable.extend({
+        image: image().optional(),
+        imageAlt: z.string().default(""),
+        docs: z.array(z.object({
+          title: z.string(),
+          url: z.string(),
+        })).optional(),
+      }),
+  });
+
+  const normatividad = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
     base: "./src/content/normatividad",
@@ -251,6 +267,7 @@ export const collections = {
   integrantes,
   informacion,
   nuestroCompromiso,
+  "informacion-interes": informacionInteres,
   blog,
   docs,
   home,

@@ -1,0 +1,75 @@
+---
+import type { InformacionInteresEntry } from "@/types";
+import { Image } from "astro:assets";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+
+interface Props {
+  entry: InformacionInteresEntry;
+}
+
+const { entry } = Astro.props;
+const { title, description, image, imageAlt, docs } = entry.data;
+---
+
+<style>
+  .proyectos-pdf {
+    width: 100%;
+    height: 800px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+</style>
+
+<BaseLayout title={title} description={description} image={image?.src}>
+  <PageHeader title={title} />
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10 flex flex-wrap content-start">
+          <!-- Title -->
+          <h1 set:html={title} class="p-2 col basis-full min-w-72" />
+
+          <!-- PDF Documents -->
+          {
+            docs && Array.isArray(docs) && docs.length > 0 ? (
+              <div class="row basis-full p-2">
+                <div class="overflow-x-auto pb-4">
+                  {docs.map((doc) => (
+                    <div class="w-full pb-5">
+                      <h3 class="mb-3 font-semibold text-gray-800">{doc.title}</h3>
+                      <div class="glass rounded-lg">
+                        <iframe
+                          title={doc.title}
+                          class="proyectos-pdf"
+                          src={doc.url}
+                        ></iframe>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              image && (
+                <div class="col basis-2/3 p-2 min-w-72">
+                  <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+                    <Image
+                      class="w-full rounded-lg"
+                      src={image}
+                      alt={imageAlt}
+                      width={1920}
+                      height={1080}
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              )
+            )
+          }
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
