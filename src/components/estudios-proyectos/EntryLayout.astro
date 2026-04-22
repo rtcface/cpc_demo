@@ -36,11 +36,12 @@ const { title, description, image, imageAlt, docs } = entry.data;
                 <div class="overflow-x-auto pb-4 scrollbar-hide">
                   {docs.map((doc) => (
                     <div class="w-full pb-5">
+                      <h3 class="mb-3 font-semibold text-gray-800">{doc.title}</h3>
                       <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
                         <iframe
-                          title="PDF Document"
+                          title={doc.title}
                           class="proyectos-pdf"
-                          src={doc}
+                          src={doc.url}
                         ></iframe>
                       </div>
                     </div>

@@ -62,9 +62,13 @@ const nuestroTrabajo = defineCollection({
       fotos: z.array(image()).optional(),
       docs: z.array(z.string()).optional(),
       periodo: z.enum(["2024-2025", "2025-2026", "index"]).default("2024-2025"),
-      categoria: z
+categoria: z
         .enum(["programa", "actividades", "informes", "index"])
         .default("actividades"),
+      docs: z.array(z.object({
+        title: z.string(),
+        url: z.string(),
+      })).optional(),
     }),
 });
 
@@ -76,12 +80,15 @@ const estudiosProyectos = defineCollection({
   schema: ({ image }) =>
     searchable.extend({
       image: image().optional(),
-      imageAlt: z.string().default(""),
-      docs: z.array(z.string()).optional(),
+imageAlt: z.string().default(""),
+      docs: z.array(z.object({
+        title: z.string(),
+        url: z.string(),
+      })).optional(),
     }),
-});
+  });
 
-const informacion = defineCollection({
+  const informacion = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
     base: "./src/content/informacion",
