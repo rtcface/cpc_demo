@@ -46,6 +46,7 @@ const integrantes = defineCollection({
       order: z.number().default(9999),
       imageAlt: z.string().default(""),
       social: social.optional(),
+      curriculum: z.string().optional(),
     }),
 });
 
