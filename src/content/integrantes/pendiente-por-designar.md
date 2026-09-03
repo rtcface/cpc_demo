@@ -1,10 +1,10 @@
 ---
 title: Pendiente por designar
-order: 5
+order: 4
 email: janedoe@email.com
 image: "@assets/images/team/vacante.webp"
 social:
   email: "contactocpctlaxcala@gmail.com"
 ---
 
-Integrante
+Pendiente por designar

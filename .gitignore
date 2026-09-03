@@ -82,3 +82,5 @@ pnpm-debug.log*
 dist/
 .output/
 .json/
+# Local Pi runtime state
+.atl/

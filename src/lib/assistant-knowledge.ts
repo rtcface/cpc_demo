@@ -82,10 +82,10 @@ export const knowledgeBase: KnowledgeItem[] = [
     question: "¿Quiénes integran el CPC?",
     response:
       "El CPC está integrado por ciudadanos con experiencia y prestigio en temas de transparencia, rendición de cuentas y combate a la corrupción. Los integrantes son:\n\n" +
-      "• **Mtro. Juan Carlos Cruz Jiménez** - Presidente\n" +
-      "• **Lcdo. Carlos Jonathan Pérez Ramírez** - Integrante\n" +
+      "• **Lcdo. Carlos Jonathan Pérez Ramírez** - Presidente\n" +
       "• **Lcda. Guadalupe Ortega Gutiérrez** - Integrante\n" +
       "• **Lcdo. Brandon Jiménez Enríquez** - Integrante\n" +
+      "• **Cargo pendiente por designar** - Integrante\n" +
       "• **Cargo pendiente por designar** - Integrante\n\n" +
       "Todos son ciudadanos tlaxcaltecas con trayectoria en materia de transparencia y anticorrupción.",
     link: "/integrantes",
